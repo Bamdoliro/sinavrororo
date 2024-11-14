@@ -1,12 +1,12 @@
+"use client";
+
 import AppLayout from "@/layouts/AppLayout";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 const main = () => {
   return (
     <AppLayout>
-      <StyledMain>
-        home
-      </StyledMain>
+      <StyledMain>home</StyledMain>
     </AppLayout>
   );
 };

@@ -13,7 +13,7 @@ interface Props {
 
 const RootLayout = ({ children }: Props) => {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body>
         <StyledComponentsRegistry>
           <Provider>{children}</Provider>
