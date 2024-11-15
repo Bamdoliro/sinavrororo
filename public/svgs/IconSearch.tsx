@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 import React from "react";
 
-const IconHomeBlack = (props: SVGProps<SVGSVGElement>) => {
+const IconSearch = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       width="24"
@@ -31,4 +31,4 @@ const IconHomeBlack = (props: SVGProps<SVGSVGElement>) => {
   );
 };
 
-export default IconHomeBlack;
+export default IconSearch;
