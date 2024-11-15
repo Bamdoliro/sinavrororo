@@ -23,11 +23,11 @@ const font = {
   B3: fontGenerator(400, 1, 160, 0.01),
   B4: fontGenerator(400, 0.875, 160, 0.00875),
 
-  Heading1: fontGenerator(600, 2.5, 140, -0.05),
-  Heading2: fontGenerator(600, 1.75, 160, -0.035),
-  Heading3: fontGenerator(600, 1.125, 120, -0.01125),
-  Heading4: fontGenerator(600, 1, 120, 0.01),
-  Heading5: fontGenerator(600, 0.875, 160, 0.00875),
+  Heading1: fontGenerator(500, 2.5, 140, -0.05),
+  Heading2: fontGenerator(500, 1.75, 160, -0.035),
+  Heading3: fontGenerator(400, 1.125, 120, -0.01125),
+  Heading4: fontGenerator(500, 1, 120, 0.01),
+  Heading5: fontGenerator(500, 0.875, 160, 0.00875),
 };
 
 export default font;

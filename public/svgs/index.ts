@@ -7,6 +7,7 @@ export { default as IconSupportWhite } from "./IconSupportWhite";
 export { default as IconPhoneBlack } from "./IconPhoneBlack";
 export { default as IconPhoneWhite } from "./IconPhoneWhite";
 export { default as IconDelete } from "./IconDelete";
-export { default as IconAdd } from "./IconAdd";
+export { default as IconAddBlack } from "./IconAddBlack";
+export { default as IconAddWhite } from "./IconAddWhite";
 export { default as IconSearch } from "./IconSearch";
 export { default as IconCheck } from "./IconCheck";
