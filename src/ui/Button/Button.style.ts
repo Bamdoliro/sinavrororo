@@ -7,38 +7,21 @@ export const getButtonStyle = {
     background-color: ${color.primary};
     color: ${color.white100};
     &:hover {
-      background-color: ${color.gray50};
+      background-color: #f1783f;
     }
   `,
   SECONDARY: css`
     background-color: ${color.white100};
     color: ${color.gray900};
     &:hover {
-      background-color: ${color.gray300};
+      background-color: #f1783f;
     }
   `,
   TERTIARY: css`
-    background-color: ${color.white100};
+    background-color: ${color.gray100};
     color: ${color.gray600};
     &:hover {
-      background-color: ${color.gray300};
-    }
-  `,
-  QUATERNARY: css`
-    background-color: ${color.gray100};
-    color: ${color.gray900};
-    border: none;
-    &:hover {
       background-color: ${color.gray200};
-    }
-  `,
-  DELETE: css`
-    background-color: rgba(244, 67, 54, 0.1);
-    color: ${color.sinabroBlue};
-    border: 1px solid ${color.sinabroBlue};
-    &:hover {
-      color: ${color.gray100};
-      background-color: ${color.sinabroBlue};
     }
   `,
   DISABLED: css`

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import color from "@/styles/color";
 import font from "@/styles/font";
 import Row from "@/ui/Flex/Row";
-import Profile from "@public/svgs/Profile";
+import { Profile } from "@public/svgs/index";
 import { useRouter } from "next/navigation";
 
 const Header = () => {

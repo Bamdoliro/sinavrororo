@@ -5,7 +5,7 @@ import AppLayout from "@/layouts/AppLayout";
 import { Text } from "@/ui/index";
 import color from "@/styles/color";
 import flex from "@/styles/flex";
-import { Button } from "@/ui/index";
+import { Button, Input, SearchInput } from "@/ui/index";
 import Row from "@/ui/Flex/Row";
 
 const Home = () => {
@@ -28,6 +28,15 @@ const Home = () => {
           <Button size="LARGE" styleType="TERTIARY">
             문의 내용으로 이동
           </Button>
+        </Row>
+        <Row>
+          <Input
+            label="label"
+            placeholder="placeholder"
+            message="dkdj"
+            icon="CALENDAR"
+          ></Input>
+          <SearchInput placeholder="찾고 싶은 "></SearchInput>
         </Row>
       </StyledHome>
     </AppLayout>

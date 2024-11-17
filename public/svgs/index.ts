@@ -1,3 +1,4 @@
+export { default as Profile } from "./Profile";
 export { default as IconHomeBlack } from "./IconHomeBlack";
 export { default as IconHomeWhite } from "./IconHomeWhite";
 export { default as IconBellBlack } from "./IconBellBlack";
@@ -11,3 +12,6 @@ export { default as IconAddBlack } from "./IconAddBlack";
 export { default as IconAddWhite } from "./IconAddWhite";
 export { default as IconSearch } from "./IconSearch";
 export { default as IconCheck } from "./IconCheck";
+export { default as IconError } from "./IconError";
+export { default as IconCalendar } from "./IconCalendar";
+export { default as IconTime } from "./IconTime";

@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 import React from "react";
 
-const IconHomeBlack = (props: SVGProps<SVGSVGElement>) => {
+const Profile = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       width="52"
@@ -24,4 +24,4 @@ const IconHomeBlack = (props: SVGProps<SVGSVGElement>) => {
   );
 };
 
-export default IconHomeBlack;
+export default Profile;
