@@ -2,9 +2,9 @@
 
 import { styled } from "styled-components";
 import AppLayout from "@/layouts/AppLayout";
-import { Text } from "@/ui/index";
-import color from "@/styles/color";
-import flex from "@/styles/flex";
+import { Text } from "@/ui";
+import { color } from "@/styles";
+import { flex } from "@/utils";
 import { Button, Input, SearchInput } from "@/ui/index";
 import Row from "@/ui/Flex/Row";
 

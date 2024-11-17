@@ -1,6 +1,6 @@
 import { IconAddWhite } from "@public/svgs/index";
-import color from "@/styles/color";
-import flex from "@/styles/flex";
+import { color } from "@/styles";
+import { flex } from "@/utils";
 import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react";
 import React from "react";
 import styled from "styled-components";

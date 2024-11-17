@@ -1,4 +1,4 @@
-import flex from "@/styles/flex";
+import { flex } from "@/utils";
 import styled from "styled-components";
 import type { FlexProps } from "./Flex.type";
 

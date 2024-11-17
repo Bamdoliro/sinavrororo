@@ -1,12 +1,11 @@
 "use client";
 
 import { ROUTES } from "@/constants/common/constants";
-import flex from "@/styles/flex";
+import { flex } from "@/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styled, { css } from "styled-components";
-import color from "@/styles/color";
-import font from "@/styles/font";
+import { color, font } from "@/styles";
 import { Text } from "@/ui/index";
 import {
   IconHomeBlack,

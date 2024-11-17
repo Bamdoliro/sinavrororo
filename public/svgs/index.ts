@@ -1,4 +1,4 @@
-export { default as Profile } from "./Profile";
+export { default as ProfileImg } from "./ProfileImg";
 export { default as IconHomeBlack } from "./IconHomeBlack";
 export { default as IconHomeWhite } from "./IconHomeWhite";
 export { default as IconBellBlack } from "./IconBellBlack";

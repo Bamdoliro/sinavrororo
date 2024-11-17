@@ -2,10 +2,9 @@
 
 import { ROUTES } from "@/constants/common/constants";
 import styled from "styled-components";
-import color from "@/styles/color";
-import font from "@/styles/font";
+import { color, font } from "@/styles";
 import Row from "@/ui/Flex/Row";
-import { Profile } from "@public/svgs/index";
+import Profile from "./Profile/Profile";
 import { useRouter } from "next/navigation";
 
 const Header = () => {
@@ -19,9 +18,7 @@ const Header = () => {
           <Role>관리자</Role>
         </Row>
         <Row>
-          <ProfileContainer>
-            <Profile />
-          </ProfileContainer>
+          <Profile />
         </Row>
       </Row>
     </StyledHeader>
@@ -44,10 +41,4 @@ const Title = styled.div`
 const Role = styled.div`
   ${font.B1}
   color: ${color.gray600};
-`;
-
-const ProfileContainer = styled.div`
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
 `;

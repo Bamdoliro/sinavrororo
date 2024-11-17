@@ -2,7 +2,7 @@
 
 import SideBar from "@/components/common/SideBar/SideBar";
 import Header from "@/components/common/Header/Header";
-import flex from "@/styles/flex";
+import { flex } from "@/utils";
 import type { ReactNode } from "react";
 import { styled } from "styled-components";
 import Row from "@/ui/Flex/Row";

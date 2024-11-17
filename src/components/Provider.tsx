@@ -1,6 +1,6 @@
 "use client";
 
-import GlobalStyle from "@/styles/global";
+import { GlobalStyle } from "@/styles";
 import { OverlayProvider } from "@toss/use-overlay";
 import type { ReactNode } from "react";
 import { ToastContainer } from "react-toastify";

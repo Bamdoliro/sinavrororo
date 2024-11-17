@@ -1,5 +1,4 @@
-import color from "@/styles/color";
-import font from "@/styles/font";
+import { color, font } from "@/styles";
 import { css } from "styled-components";
 
 export const getButtonStyle = {
