@@ -1,6 +1,6 @@
 const color = {
   gray50: "#F2F2F2",
-  gray100: "#E6E6E6",
+  gray100: "#F1F2F5",
   gray200: "#CCCCCC",
   gray300: "#B3B3B3",
   gray400: "#999999",
@@ -17,12 +17,12 @@ const color = {
   white80: "#FFFFFFCC",
   white100: "#FFFFFF",
 
+  red: "#F44336",
   paleYellow: "#FBFCF7",
   primary: "#FF7433",
 
   sinabroBlue: "#087FE7",
   sinabroSkyBlue: "#6CC4FA",
-
   sinabroPink: "#F376BB",
   sinabroCream: "#EFE6CE",
 };

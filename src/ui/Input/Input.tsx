@@ -86,18 +86,14 @@ const StyledInput = styled.input<{ $isError: boolean }>`
   }
   &:focus {
     border: 1px solid ${color.primary};
-    outline: 2px solid rgba(255, 222, 207, 1);
+    outline: 2px solid rgba(255, 221, 207, 1);
   }
 
   ${(props) =>
     props.$isError &&
     css`
-      border: 1px solid ${color.gray500};
-
-      &:focus {
-        border: 1px solid ${color.primary};
-        outline: 2px solid rgba(255, 222, 207, 1);
-      }
+      border: 1px solid ${color.red};
+      outline: 2px solid rgba(254, 232, 231, 1);
     `}
 `;
 
