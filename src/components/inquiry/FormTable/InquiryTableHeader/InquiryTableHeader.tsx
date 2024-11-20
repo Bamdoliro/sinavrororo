@@ -1,0 +1,56 @@
+import { color } from "@/styles";
+import { CheckBox, Dropdown, Row } from "@/ui";
+import { flex } from "@/utils";
+import { useState } from "react";
+import styled from "styled-components";
+
+const InquiryTableHeader = () => {
+  const [isInquiryAllSelected] = useState(false);
+
+  return (
+    <StyledInquiryTableHeader>
+      <Row
+        gap={48}
+        alignItems="center"
+        justifyContent="space-between"
+        style={{ width: "100%" }}
+      >
+        <CheckBox checked={isInquiryAllSelected} onCheckChange={() => {}} />
+        <Row gap={76} alignItems="center">
+          <Dropdown
+            data={[
+              { value: "진행", label: "계쏙" },
+              { value: "진행", label: "중단" },
+              { value: "대기", label: "대기" },
+              { value: "진행", label: "진행" },
+            ]}
+            onChange={() => {}}
+            name="드랍다운"
+            label="상태"
+          />
+          <Dropdown
+            data={[
+              { value: "진행", label: "계쏙" },
+              { value: "진행", label: "중단" },
+              { value: "대기", label: "대기" },
+              { value: "진행", label: "진행" },
+            ]}
+            onChange={() => {}}
+            name="드라"
+            label="등록 일시"
+          />
+        </Row>
+      </Row>
+    </StyledInquiryTableHeader>
+  );
+};
+
+export default InquiryTableHeader;
+
+const StyledInquiryTableHeader = styled.div`
+  ${flex({ alignItems: "center" })}
+  background-color: ${color.gray100};
+  padding: 8px 40px;
+  width: 100%;
+  border-top: 1px solid ${color.adminGray400};
+`;
