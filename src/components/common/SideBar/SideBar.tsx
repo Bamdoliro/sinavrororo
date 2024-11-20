@@ -72,10 +72,10 @@ const SideBar = () => {
           <StyledLink
             key={`navigation ${name}`}
             href={route}
-            $active={route === pathName}
+            $active={pathName.startsWith(route)}
           >
             <Row alignItems="center" gap={8}>
-              {route === pathName ? activeIcon : icon}
+              {pathName.startsWith(route) ? activeIcon : icon}
               <Text fontType="Heading3">{name}</Text>
             </Row>
           </StyledLink>

@@ -10,6 +10,7 @@ import { useState } from "react";
 const InquiryTable = () => {
   const inquiryList = [
     {
+      id: 1,
       title: "캐릭터가 제게 편지를 보내지 않아요",
       content: "슬픕니다...",
       state: "진행 중",
@@ -17,6 +18,7 @@ const InquiryTable = () => {
       time: "오후 11:25",
     },
     {
+      id: 2,
       title: "캐릭터가 제게 편지를 보내지 않아요",
       content: "슬픕니다...",
       state: "진행 중",
@@ -24,6 +26,7 @@ const InquiryTable = () => {
       time: "오후 11:25",
     },
     {
+      id: 3,
       title: "캐릭터가 제게 편지를 보내지 않아요",
       content: "슬픕니다...",
       state: "진행 중",
@@ -31,6 +34,7 @@ const InquiryTable = () => {
       time: "오후 11:25",
     },
     {
+      id: 4,
       title: "캐릭터가 제게 편지를 보내지 않아요",
       content: "슬픕니다...",
       state: "진행 중",
@@ -38,6 +42,47 @@ const InquiryTable = () => {
       time: "오후 11:25",
     },
     {
+      id: 5,
+      title: "캐릭터가 제게 편지를 보내지 않아요",
+      content: "슬픕니다...",
+      state: "진행 중",
+      date: "2024.09.25",
+      time: "오후 11:25",
+    },
+    {
+      id: 1,
+      title: "캐릭터가 제게 편지를 보내지 않아요",
+      content: "슬픕니다...",
+      state: "진행 중",
+      date: "2024.09.25",
+      time: "오후 11:25",
+    },
+    {
+      id: 2,
+      title: "캐릭터가 제게 편지를 보내지 않아요",
+      content: "슬픕니다...",
+      state: "진행 중",
+      date: "2024.09.25",
+      time: "오후 11:25",
+    },
+    {
+      id: 3,
+      title: "캐릭터가 제게 편지를 보내지 않아요",
+      content: "슬픕니다...",
+      state: "진행 중",
+      date: "2024.09.25",
+      time: "오후 11:25",
+    },
+    {
+      id: 4,
+      title: "캐릭터가 제게 편지를 보내지 않아요",
+      content: "슬픕니다...",
+      state: "진행 중",
+      date: "2024.09.25",
+      time: "오후 11:25",
+    },
+    {
+      id: 5,
       title: "캐릭터가 제게 편지를 보내지 않아요",
       content: "슬픕니다...",
       state: "진행 중",
@@ -72,16 +117,19 @@ const InquiryTable = () => {
           </Column>
         </TableSetting>
         <InquiryTableHeader />
-        {inquiryList &&
-          inquiryList.map((item, index) => (
-            <InquiryTableItem
-              key={`inquiry item ${index}`}
-              title={item.title}
-              state={item.state}
-              date={item.date}
-              time={item.time}
-            />
-          ))}
+        <InquiryTableItemContainer>
+          {inquiryList &&
+            inquiryList.map((item, index) => (
+              <InquiryTableItem
+                key={`inquiry item ${index}`}
+                id={item.id}
+                title={item.title}
+                state={item.state}
+                date={item.date}
+                time={item.time}
+              />
+            ))}
+        </InquiryTableItemContainer>
       </Column>
     </StyledInquiryTableStyled>
   );
@@ -97,4 +145,9 @@ const StyledInquiryTableStyled = styled.div`
 
 const TableSetting = styled.div`
   padding: 40px 40px 14px 40px;
+`;
+
+const InquiryTableItemContainer = styled.div`
+  height: 100%;
+  overflow: auto;
 `;

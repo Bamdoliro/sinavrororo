@@ -5,7 +5,7 @@ import AppLayout from "@/layouts/AppLayout";
 import { Text } from "@/ui";
 import { color } from "@/styles";
 import { flex } from "@/utils";
-import InquiryTable from "@/components/inquiry/FormTable/InquiryTable";
+import InquiryTable from "@/components/inquiry/InquiryTable/InquiryTable";
 
 const InquiryPage = () => {
   return (

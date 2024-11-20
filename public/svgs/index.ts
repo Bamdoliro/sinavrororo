@@ -15,5 +15,6 @@ export { default as IconCheck } from "./IconCheck";
 export { default as IconError } from "./IconError";
 export { default as IconCalendar } from "./IconCalendar";
 export { default as IconTime } from "./IconTime";
+export { default as IconArrowLeft } from "./IconArrowLeft";
 export { default as IconArrowBottom } from "./IconArrowBottom";
 export { default as New } from "./New";
