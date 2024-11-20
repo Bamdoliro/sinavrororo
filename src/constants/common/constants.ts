@@ -1,6 +1,6 @@
 export const ROUTES = {
   MAIN: "/main",
-  INQUIRE: "/inquire",
+  INQUIRY: "/inquiry",
   FAQ: "/faq",
   ALARM: "/alarm",
 } as const;
