@@ -5,6 +5,7 @@ import InquiryTableItem from "./InquiryTableItem/InquiryTableItem";
 import styled from "styled-components";
 import { color } from "@/styles";
 import { Toggle } from "@/ui";
+import { useState } from "react";
 
 const InquiryTable = () => {
   const inquiryList = [
@@ -12,41 +13,45 @@ const InquiryTable = () => {
       title: "캐릭터가 제게 편지를 보내지 않아요",
       content: "슬픕니다...",
       state: "진행 중",
-      date: "2024.09.25 오후 11:25",
+      date: "2024.09.25",
+      time: "오후 11:25",
     },
     {
       title: "캐릭터가 제게 편지를 보내지 않아요",
       content: "슬픕니다...",
       state: "진행 중",
-      date: "2024.09.25 오후 11:25",
+      date: "2024.09.25",
+      time: "오후 11:25",
     },
     {
       title: "캐릭터가 제게 편지를 보내지 않아요",
       content: "슬픕니다...",
       state: "진행 중",
-      date: "2024.09.25 오후 11:25",
+      date: "2024.09.25",
+      time: "오후 11:25",
     },
     {
       title: "캐릭터가 제게 편지를 보내지 않아요",
       content: "슬픕니다...",
       state: "진행 중",
-      date: "2024.09.25 오후 11:25",
+      date: "2024.09.25",
+      time: "오후 11:25",
     },
     {
       title: "캐릭터가 제게 편지를 보내지 않아요",
       content: "슬픕니다...",
       state: "진행 중",
-      date: "2024.09.25 오후 11:25",
-    },
-    {
-      title: "캐릭터가 제게 편지를 보내지 않아요",
-      content: "슬픕니다...",
-      state: "진행 중",
-      date: "2024.09.25 오후 11:25",
+      date: "2024.09.25",
+      time: "오후 11:25",
     },
   ];
 
   const inquiryCount = 100;
+  const [inquiryType, setInquiryType] = useState("새로운 문의");
+
+  const handleToggleChange = (value: string) => {
+    setInquiryType(value);
+  };
 
   return (
     <StyledInquiryTableStyled>
@@ -56,7 +61,8 @@ const InquiryTable = () => {
             <Row justifyContent="space-between">
               <Toggle
                 data={["새로운 문의", "완료된 문의"]}
-                onChange={() => {}}
+                value={inquiryType}
+                onChange={handleToggleChange}
               />
               <SearchInput placeholder="찾고 싶은 문의를 검색해주세요"></SearchInput>
             </Row>
@@ -73,6 +79,7 @@ const InquiryTable = () => {
               title={item.title}
               state={item.state}
               date={item.date}
+              time={item.time}
             />
           ))}
       </Column>
@@ -85,6 +92,7 @@ export default InquiryTable;
 const StyledInquiryTableStyled = styled.div`
   border: 1px solid ${color.adminGray400};
   border-radius: 32px 32px 0 0;
+  height: 100vh;
 `;
 
 const TableSetting = styled.div`

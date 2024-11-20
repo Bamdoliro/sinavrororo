@@ -1,5 +1,5 @@
 import { color } from "@/styles";
-import { CheckBox, Row, Text } from "@/ui";
+import { CheckBox, Column, Row, Text } from "@/ui";
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -7,9 +7,10 @@ interface Inquiry {
   title: string;
   state: string;
   date: string;
+  time: string;
 }
 
-const InquiryTableItem = ({ title, state, date }: Inquiry) => {
+const InquiryTableItem = ({ title, state, date, time }: Inquiry) => {
   const [isInquirySelecting] = useState(false);
 
   return (
@@ -20,18 +21,17 @@ const InquiryTableItem = ({ title, state, date }: Inquiry) => {
           <Text fontType="B2" width={"68%"}>
             {title}
           </Text>
-          <Text fontType="B3" width={80} color={color.gray400}>
+          <Text fontType="B3" width={70} color={color.gray400}>
             {state}
           </Text>
-          <Text
-            fontType="B3"
-            width={70}
-            color={color.gray400}
-            whiteSpace="normal"
-            style={{ lineHeight: "1rem" }}
-          >
-            {date}
-          </Text>
+          <Column alignItems="center">
+            <Text fontType="B3" width={80} color={color.gray400}>
+              {date}
+            </Text>
+            <Text fontType="B3" width={70} color={color.gray400}>
+              {time}
+            </Text>
+          </Column>
         </Row>
       </TableItem>
     </StyledInquiryTableItem>
@@ -46,5 +46,5 @@ const StyledInquiryTableItem = styled.button`
 
 const TableItem = styled.div`
   padding: 14px 40px;
-  border-top: 1px solid ${color.adminGray400};
+  border-bottom: 1px solid ${color.adminGray400};
 `;

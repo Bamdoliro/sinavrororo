@@ -15,7 +15,9 @@ interface Props {
 }
 
 const Toggle = ({ data, onChange }: Props) => {
-  const [selectedValue, setSelectedValue] = useState(data[0]);
+  const initialValue =
+    typeof data[0] === "string" ? data[0] : (data[0] as Data).value;
+  const [selectedValue, setSelectedValue] = useState(initialValue);
 
   const handleButtonClick = (newValue: string) => {
     setSelectedValue(newValue);

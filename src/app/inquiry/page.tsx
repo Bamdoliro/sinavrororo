@@ -32,7 +32,7 @@ const StyledInquiry = styled.div`
   gap: 40px;
   width: 100%;
   height: 100%;
-  padding: 3.75rem 4rem;
+  padding: 3.75rem 4rem 0rem 3.75rem;
   overflow: auto;
 `;
 

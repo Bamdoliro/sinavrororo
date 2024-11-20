@@ -15,7 +15,7 @@ const AppLayout = ({ children }: Props) => {
   return (
     <StyledAppLayout>
       <Header />
-      <Row>
+      <Row style={{ height: "100vh" }}>
         <SideBar />
         <Section>{children}</Section>
       </Row>
@@ -33,6 +33,6 @@ const StyledAppLayout = styled.div`
 
 const Section = styled.section`
   flex: 1;
-  min-width: fit-content;
+  min-width: 0;
   overflow: auto;
 `;

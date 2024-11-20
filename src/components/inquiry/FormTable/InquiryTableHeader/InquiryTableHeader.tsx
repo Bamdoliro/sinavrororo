@@ -53,4 +53,5 @@ const StyledInquiryTableHeader = styled.div`
   padding: 8px 40px;
   width: 100%;
   border-top: 1px solid ${color.adminGray400};
+  border-bottom: 1px solid ${color.adminGray400};
 `;
