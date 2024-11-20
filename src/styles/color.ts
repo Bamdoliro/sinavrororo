@@ -10,6 +10,9 @@ const color = {
   gray800: "#333333",
   gray900: "#191919",
 
+  adminGray400: "#C3CAD5",
+  adminGray600: "#8795AB",
+
   glassWhite: "#FFFFFF1A",
   glassDark: "#FFFFFF4D",
   glassStroke: "#FFFFFF1A",

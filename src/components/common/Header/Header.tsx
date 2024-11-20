@@ -3,7 +3,7 @@
 import { ROUTES } from "@/constants/common/constants";
 import styled from "styled-components";
 import { color, font } from "@/styles";
-import Row from "@/ui/Flex/Row";
+import { Row } from "@/ui";
 import Profile from "./Profile/Profile";
 import { useRouter } from "next/navigation";
 

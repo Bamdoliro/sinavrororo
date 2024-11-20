@@ -15,12 +15,12 @@ import {
   IconPhoneBlack,
   IconPhoneWhite,
 } from "@public/svgs/index";
-import Row from "@/ui/Flex/Row";
+import { Row } from "@/ui";
 
 const NAVIGATION_DATA = [
   {
     name: "문의 내역",
-    route: ROUTES.INQUIRE,
+    route: ROUTES.INQUIRY,
     icon: <IconPhoneWhite />,
     activeIcon: <IconPhoneBlack />,
   },

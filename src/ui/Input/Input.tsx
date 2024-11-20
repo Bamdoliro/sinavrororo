@@ -51,6 +51,7 @@ const Input = ({
             }}
             width={24}
             height={24}
+            color={color.adminGray600}
           />
         ) : icon === "TIME" ? (
           <IconTime
@@ -62,6 +63,7 @@ const Input = ({
             }}
             width={24}
             height={24}
+            color={color.adminGray600}
           />
         ) : null}
       </div>
@@ -78,11 +80,11 @@ const StyledInput = styled.input<{ $isError: boolean }>`
   width: 100%;
   padding: 10px 16px;
   background-color: ${color.white100};
-  border: 1px solid ${color.gray500};
+  border: 1px solid ${color.adminGray600};
   border-radius: 6px;
 
   &::placeholder {
-    color: ${color.gray600};
+    color: ${color.gray200};
   }
   &:focus {
     border: 1px solid ${color.primary};
