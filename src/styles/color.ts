@@ -10,6 +10,7 @@ const color = {
   gray800: "#333333",
   gray900: "#191919",
 
+  adminGray300: "#D2D7DF",
   adminGray400: "#C3CAD5",
   adminGray600: "#8795AB",
 

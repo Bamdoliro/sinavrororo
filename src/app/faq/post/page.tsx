@@ -1,6 +1,6 @@
 "use client";
 
-import InquiryDetailContent from "@/components/inquiry/InquiryDetailContent/InquiryDetailContent";
+import InquiryDetailContent from "@/components/faq/FaqPost/FaqPost";
 import { ROUTES } from "@/constants/common/constants";
 import AppLayout from "@/layouts/AppLayout";
 import { IconArrowLeft } from "@public/svgs";
@@ -20,7 +20,7 @@ const InquiryDetailPage = ({ params: { id } }: Props) => {
     <AppLayout>
       <StyledInquiryDetail>
         <InquiryDetailContainer>
-          <DirectLink href={ROUTES.INQUIRY}>
+          <DirectLink href={ROUTES.FAQ}>
             <IconArrowLeft width={32} height={32} />
             <Text fontType="Heading4" color={color.gray400}>
               뒤로가기

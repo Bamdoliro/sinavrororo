@@ -19,7 +19,7 @@ const InquiryTableHeader = () => {
         <Row gap={76} alignItems="center">
           <Dropdown
             data={[
-              { value: "진행", label: "계쏙" },
+              { value: "진행", label: "계속" },
               { value: "진행", label: "중단" },
               { value: "대기", label: "대기" },
               { value: "진행", label: "진행" },
@@ -30,10 +30,8 @@ const InquiryTableHeader = () => {
           />
           <Dropdown
             data={[
-              { value: "진행", label: "계쏙" },
-              { value: "진행", label: "중단" },
-              { value: "대기", label: "대기" },
-              { value: "진행", label: "진행" },
+              { value: "빠른 순", label: "빠른 순" },
+              { value: "느린 순", label: "느린 순" },
             ]}
             onChange={() => {}}
             name="드라"

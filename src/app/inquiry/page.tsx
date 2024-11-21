@@ -16,7 +16,7 @@ const InquiryPage = () => {
             문의 내역
           </Text>
           <Text fontType="B2" color={color.gray600}>
-            문의들을 관리할 수 있어요
+            문의들을 관리할 수 있어요.
           </Text>
         </Title>
         <InquiryTable></InquiryTable>
