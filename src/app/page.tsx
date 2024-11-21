@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import styled from "styled-components";
 
 const LoginContent = () => {
-  return <StyledLoginPage></StyledLoginPage>;
+  return <StyledLoginPage ></StyledLoginPage>;
 };
 
 const LoginPage = () => (

@@ -1,5 +1,7 @@
 const color = {
   gray50: "#F2F2F2",
+  gray250: "E6E8EA",
+
   gray100: "#F1F2F5",
   gray200: "#CCCCCC",
   gray300: "#B3B3B3",
@@ -10,9 +12,14 @@ const color = {
   gray800: "#333333",
   gray900: "#191919",
 
+  adminGray100: "#F1F2F5",
+  adminGray200: "#E1E5EA",
   adminGray300: "#D2D7DF",
   adminGray400: "#C3CAD5",
+  adminGray500: "#A5B0C0",
   adminGray600: "#8795AB",
+  adminGray700: "#858D99",
+  adminGray800: "#546278",
 
   glassWhite: "#FFFFFF1A",
   glassDark: "#FFFFFF4D",

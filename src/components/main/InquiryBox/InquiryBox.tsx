@@ -19,7 +19,7 @@ const InquiryBox = () => {
           <Text fontType="Heading2" color={color.gray900}>
             문의 내역
           </Text>
-          {isNewInquiry && <New></New>}
+          {isNewInquiry && <New />}
         </Row>
         <Text fontType="B2" color={color.gray600}>
           새로 생긴 문의 내역 {InquiryCount}개

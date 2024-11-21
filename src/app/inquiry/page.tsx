@@ -19,7 +19,7 @@ const InquiryPage = () => {
             문의들을 관리할 수 있어요.
           </Text>
         </Title>
-        <InquiryTable></InquiryTable>
+        <InquiryTable />
       </StyledInquiry>
     </AppLayout>
   );

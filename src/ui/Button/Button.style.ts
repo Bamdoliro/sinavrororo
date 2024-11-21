@@ -11,9 +11,12 @@ export const getButtonStyle = {
   `,
   SECONDARY: css`
     background-color: ${color.white100};
-    color: ${color.gray900};
+    border: 1px solid ${color.adminGray600};
+    color: ${color.gray700};
     &:hover {
-      background-color: #f1783f;
+      background-color: ${color.primary};
+      color: ${color.gray900};
+      border: 1px solid ${color.primary};
     }
   `,
   TERTIARY: css`
@@ -43,6 +46,9 @@ export const getButtonPadding = {
   ICON: css`
     padding: 8px 14px;
   `,
+  SELECT: css`
+    padding: 10px 47px;
+  `,
 };
 
 export const getButtonSize = {
@@ -61,5 +67,9 @@ export const getButtonSize = {
   ICON: css`
     ${font.Heading5}
     height: 36px;
+  `,
+  SELECT: css`
+    ${font.B3}
+    height: 48px;
   `,
 };

@@ -19,7 +19,7 @@ const FaqPage = () => {
             자주 묻는 질물들을 관리할 수 있어요.
           </Text>
         </Title>
-        <FaqTable></FaqTable>
+        <FaqTable />
       </StyledFaq>
     </AppLayout>
   );

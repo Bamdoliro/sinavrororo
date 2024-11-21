@@ -4,4 +4,5 @@ export const ROUTES = {
   FAQ: "/faq",
   FAQ_POST: "/faq/post",
   ALARM: "/alarm",
+  ALARM_POST: "alarm/post",
 } as const;

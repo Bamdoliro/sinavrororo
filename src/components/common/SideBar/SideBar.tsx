@@ -91,7 +91,7 @@ const StyledSideBar = styled.div`
   position: relative;
   ${flex({ flexDirection: "column" })}
   width: 240px;
-  height: 100vh;
+  height: calc(100vh - 92px);
   background: ${color.gray900};
   flex-shrink: 0;
   gap: 40px;

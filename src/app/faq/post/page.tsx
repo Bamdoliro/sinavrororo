@@ -38,7 +38,6 @@ const StyledFaqDetail = styled.div`
   ${flex({ flexDirection: "column" })}
   gap: 24px;
   width: 100%;
-  min-height: 100vh;
   padding: 64px 60px 0px 60px;
 `;
 

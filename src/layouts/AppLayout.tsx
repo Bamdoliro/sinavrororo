@@ -15,7 +15,7 @@ const AppLayout = ({ children }: Props) => {
   return (
     <StyledAppLayout>
       <Header />
-      <Row style={{ height: "100vh" }}>
+      <Row style={{ height: "calc(100vh - 92px)" }}>
         <SideBar />
         <Section>{children}</Section>
       </Row>

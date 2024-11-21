@@ -69,7 +69,7 @@ const InquiryTable = () => {
                 value={inquiryType}
                 onChange={handleToggleChange}
               />
-              <SearchInput placeholder="찾고 싶은 문의를 검색해주세요"></SearchInput>
+              <SearchInput placeholder="찾고 싶은 문의를 검색해주세요" />
             </Row>
             <Text fontType="B3" color={color.gray600}>
               문의 {inquiryCount}개

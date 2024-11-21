@@ -47,7 +47,7 @@ const FaqTable = () => {
         <TableSetting>
           <Column gap={20}>
             <Row justifyContent="space-between">
-              <SearchInput placeholder="찾고 싶은 문의를 검색해주세요"></SearchInput>
+              <SearchInput placeholder="찾고 싶은 자주 묻는 질문을 검색해주세요" />
               <Button
                 icon="ADD_ICON"
                 size="ICON"
