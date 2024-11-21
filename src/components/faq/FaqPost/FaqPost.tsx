@@ -1,15 +1,10 @@
 import { color, font } from "@/styles";
-import { Column, Text, Button, Row, Textarea } from "@/ui";
+import { Column, Button, Row } from "@/ui";
 import { flex, resizeTextarea } from "@/utils";
 import styled from "styled-components";
-import { InquiryWritingModal } from "@/components/common";
-import { ChangeEventHandler, useCallback, useRef, useState } from "react";
-import { useOverlay } from "@toss/use-overlay";
+import { ChangeEventHandler, useRef, useState } from "react";
 
-interface Props {
-  id: number;
-}
-const InquiryDetailContent = ({ id }: Props) => {
+const FaqPost = () => {
   const contentTextareaRef = useRef<HTMLTextAreaElement>(null);
 
   const [faqData, setFaqData] = useState({
@@ -27,9 +22,9 @@ const InquiryDetailContent = ({ id }: Props) => {
   };
 
   return (
-    <StyledInquiryDetailContent>
+    <StyledFaqDetailContent>
       <Column gap={48}>
-        <InquiryHeader>
+        <FaqHeader>
           <Column gap={20}>
             <TitleInput
               name="title"
@@ -43,7 +38,7 @@ const InquiryDetailContent = ({ id }: Props) => {
               답글 남기기
             </Button>
           </Row>
-        </InquiryHeader>
+        </FaqHeader>
         <Column>
           <ContentTextarea
             ref={contentTextareaRef}
@@ -55,18 +50,18 @@ const InquiryDetailContent = ({ id }: Props) => {
           />
         </Column>
       </Column>
-    </StyledInquiryDetailContent>
+    </StyledFaqDetailContent>
   );
 };
 
-export default InquiryDetailContent;
+export default FaqPost;
 
-const StyledInquiryDetailContent = styled.div`
+const StyledFaqDetailContent = styled.div`
   ${flex({ flexDirection: "column" })}
   padding-top: 28px;
 `;
 
-const InquiryHeader = styled.div`
+const FaqHeader = styled.div`
   ${flex({ justifyContent: "space-between" })}
   width: 100%;
   border-bottom: 1px solid ${color.adminGray300};

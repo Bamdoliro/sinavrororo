@@ -1,6 +1,6 @@
 "use client";
 
-import InquiryDetailContent from "@/components/faq/FaqPost/FaqPost";
+import FaqDetailContent from "@/components/faq/FaqPost/FaqPost";
 import { ROUTES } from "@/constants/common/constants";
 import AppLayout from "@/layouts/AppLayout";
 import { IconArrowLeft } from "@public/svgs";
@@ -11,15 +11,11 @@ import { Text } from "@/ui";
 import { Suspense } from "react";
 import styled from "styled-components";
 
-interface Props {
-  params: { id: number };
-}
-
-const InquiryDetailPage = ({ params: { id } }: Props) => {
+const FaqDetailPage = () => {
   return (
     <AppLayout>
-      <StyledInquiryDetail>
-        <InquiryDetailContainer>
+      <StyledFaqDetail>
+        <FaqDetailContainer>
           <DirectLink href={ROUTES.FAQ}>
             <IconArrowLeft width={32} height={32} />
             <Text fontType="Heading4" color={color.gray400}>
@@ -27,17 +23,17 @@ const InquiryDetailPage = ({ params: { id } }: Props) => {
             </Text>
           </DirectLink>
           <Suspense fallback={<div>loading....</div>}>
-            <InquiryDetailContent id={id} />
+            <FaqDetailContent />
           </Suspense>
-        </InquiryDetailContainer>
-      </StyledInquiryDetail>
+        </FaqDetailContainer>
+      </StyledFaqDetail>
     </AppLayout>
   );
 };
 
-export default InquiryDetailPage;
+export default FaqDetailPage;
 
-const StyledInquiryDetail = styled.div`
+const StyledFaqDetail = styled.div`
   position: relative;
   ${flex({ flexDirection: "column" })}
   gap: 24px;
@@ -46,7 +42,7 @@ const StyledInquiryDetail = styled.div`
   padding: 64px 60px 0px 60px;
 `;
 
-const InquiryDetailContainer = styled.div`
+const FaqDetailContainer = styled.div`
   border: 1px solid ${color.adminGray400};
   border-radius: 32px 32px 0px 0px;
   height: 100vh;

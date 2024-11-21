@@ -25,9 +25,7 @@ const InquiryDetailContent = ({ id }: Props) => {
       <InquiryWritingModal
         isOpen={isOpen}
         onClose={close}
-        onConfirm={() => {
-          close;
-        }}
+        onConfirm={() => close()}
       />
     ));
   }, [overlay]);

@@ -1,17 +1,15 @@
 import { ROUTES } from "@/constants/common/constants";
 import { color } from "@/styles";
-import { CheckBox, Column, Row, Text } from "@/ui";
+import { Row, Text } from "@/ui";
 import Link from "next/link";
-import { useState } from "react";
 import styled from "styled-components";
 
 interface Faq {
-  id: number;
   title: string;
   date: string;
 }
 
-const FaqTableItem = ({ id, title, date }: Faq) => {
+const FaqTableItem = ({ title, date }: Faq) => {
   return (
     <Link href={ROUTES.FAQ_POST} style={{ width: "100%" }}>
       <StyledFaqTableItem style={{ cursor: "pointer" }}>

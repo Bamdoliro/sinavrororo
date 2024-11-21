@@ -20,13 +20,6 @@ const InquiryWritingModal = ({ isOpen, onClose, onConfirm }: Props) => {
     setCoverLetter(value);
     setIsCoverLetterError(value.trim() === "");
   };
-  const handleConfirm = () => {
-    if (coverLetter.trim() === "") {
-      setIsCoverLetterError(true);
-      return;
-    }
-    onConfirm();
-  };
 
   return (
     <BlurBackground $isOpen={isOpen}>

@@ -64,7 +64,6 @@ const FaqTable = () => {
             FaqList.map((item, index) => (
               <FaqTableItem
                 key={`faq item ${index}`}
-                id={item.id}
                 title={item.title}
                 date={item.date}
               />
