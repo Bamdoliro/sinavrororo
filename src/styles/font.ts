@@ -27,7 +27,7 @@ const font = {
   Heading2: fontGenerator(500, 1.75, 160, -0.035),
   Heading3: fontGenerator(400, 1.125, 120, -0.01125),
   Heading4: fontGenerator(500, 1, 120, 0.01),
-  Heading5: fontGenerator(500, 0.875, 160, 0.00875),
+  Heading5: fontGenerator(600, 0.875, 160, 0.00875),
 
   Headline1: fontGenerator(500, 1, 160, 0.01),
 };

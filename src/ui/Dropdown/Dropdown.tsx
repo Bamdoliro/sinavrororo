@@ -25,7 +25,6 @@ interface Props {
   placeholder?: string;
   doubled?: number;
   disabled?: boolean;
-  background?: "White" | "Gray";
 }
 
 const Dropdown = ({
@@ -35,7 +34,6 @@ const Dropdown = ({
   onChange,
   name,
   doubled,
-  background = "White",
   disabled = false,
 }: Props) => {
   const {
@@ -64,7 +62,6 @@ const Dropdown = ({
         size={size}
         onClick={handleDropdownClick}
         $isOpen={isOpen}
-        background={background}
         disabled={disabled}
       >
         <Text fontType="B3" color={color.gray900} ellipsis={true}>
@@ -98,14 +95,12 @@ export default Dropdown;
 const StyledDropdown = styled.div<{
   $isOpen: boolean;
   size: DropdownSizeOption;
-  background: "White" | "Gray";
   disabled: boolean;
 }>`
   ${flex({ alignItems: "center", justifyContent: "flex-end" })}
   border-radius: 6px;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-  background-color: ${(props) =>
-    props.background === "White" ? `${color.white100}` : `${color.gray100}`};
+  background-color: transparent;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   gap: 4px;
   min-width: 79px;

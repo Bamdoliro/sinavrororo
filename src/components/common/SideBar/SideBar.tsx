@@ -15,12 +15,12 @@ import {
   IconPhoneBlack,
   IconPhoneWhite,
 } from "@public/svgs/index";
-import Row from "@/ui/Flex/Row";
+import { Row } from "@/ui";
 
 const NAVIGATION_DATA = [
   {
     name: "문의 내역",
-    route: ROUTES.INQUIRE,
+    route: ROUTES.INQUIRY,
     icon: <IconPhoneWhite />,
     activeIcon: <IconPhoneBlack />,
   },
@@ -72,10 +72,10 @@ const SideBar = () => {
           <StyledLink
             key={`navigation ${name}`}
             href={route}
-            $active={route === pathName}
+            $active={pathName.startsWith(route)}
           >
             <Row alignItems="center" gap={8}>
-              {route === pathName ? activeIcon : icon}
+              {pathName.startsWith(route) ? activeIcon : icon}
               <Text fontType="Heading3">{name}</Text>
             </Row>
           </StyledLink>
@@ -91,7 +91,7 @@ const StyledSideBar = styled.div`
   position: relative;
   ${flex({ flexDirection: "column" })}
   width: 240px;
-  height: 100vh;
+  height: calc(100vh - 92px);
   background: ${color.gray900};
   flex-shrink: 0;
   gap: 40px;

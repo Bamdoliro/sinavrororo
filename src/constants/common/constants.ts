@@ -1,6 +1,8 @@
 export const ROUTES = {
   MAIN: "/main",
-  INQUIRE: "/inquire",
+  INQUIRY: "/inquiry",
   FAQ: "/faq",
+  FAQ_POST: "/faq/post",
   ALARM: "/alarm",
+  ALARM_POST: "alarm/post",
 } as const;
