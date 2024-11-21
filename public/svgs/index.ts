@@ -19,6 +19,6 @@ export { default as IconArrowLeft } from "./IconArrowLeft";
 export { default as IconArrowBottom } from "./IconArrowBottom";
 export { default as IconEye } from "./IconVisibleEye";
 export { default as New } from "./New";
-export { default as Sinabro } from "./Sinabro";
 export { default as IconVisibleEye } from "./IconVisibleEye";
 export { default as IconInvisibleEye } from "./IconInvisibleEye";
+export { default as GoggleLogo } from "./GoggleLogo";
