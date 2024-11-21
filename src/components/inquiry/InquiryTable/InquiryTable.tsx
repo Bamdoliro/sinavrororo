@@ -100,7 +100,7 @@ const InquiryTable = () => {
 
   return (
     <StyledInquiryTableStyled>
-      <Column>
+      <Column style={{ width: "100%" }}>
         <TableSetting>
           <Column gap={20}>
             <Row justifyContent="space-between">
