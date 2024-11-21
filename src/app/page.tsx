@@ -4,7 +4,7 @@ import { flex } from "@/utils";
 import { Suspense } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import { Button, Column, Input, Row } from "@/ui";
+import { Button, Column, Input } from "@/ui";
 import { color } from "@/styles";
 import PreviewInput from "@/ui/Input/PreviewInput";
 
