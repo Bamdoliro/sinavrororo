@@ -1,8 +1,5 @@
 import { ROUTES } from "@/constants/common/constants";
-import {
-  useLoginAdminMutation,
-  useLogoutAdminMutation,
-} from "@/services/auth/mutations";
+import { useLogoutAdminMutation } from "@/services/auth/mutations";
 import { useRouter } from "next/navigation";
 
 export const useCTAButton = () => {
