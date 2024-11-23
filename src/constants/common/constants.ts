@@ -1,4 +1,5 @@
 export const ROUTES = {
+  LOGIN: "/",
   MAIN: "/main",
   INQUIRY: "/inquiry",
   FAQ: "/faq",
@@ -6,3 +7,12 @@ export const ROUTES = {
   ALARM: "/alarm",
   ALARM_POST: "alarm/post",
 } as const;
+
+export const TOKEN = {
+  ACCESS: "access-token",
+  REFRESH: "refresh-token",
+} as const;
+
+export const KEY = {
+  LOGIN: "useLoginKey",
+};

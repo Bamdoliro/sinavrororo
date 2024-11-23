@@ -1,5 +1,5 @@
 import { color } from "@/styles";
-import { IconSearch } from "@public/svgs/index";
+import { IconSearch } from "@public/icons/index";
 import { flex } from "@/utils";
 import styled from "styled-components";
 import type { InputProps } from "./Input.type";

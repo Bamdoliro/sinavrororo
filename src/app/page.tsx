@@ -7,14 +7,17 @@ import Image from "next/image";
 import { Column, Row, Text } from "@/ui";
 import { color } from "@/styles";
 import { GoggleLogo } from "@public/svgs";
+import { useLoginAction } from "./login.hooks";
 
 const LoginContent = () => {
+  const { handleLogin } = useLoginAction();
+
   return (
     <StyledLoginPage>
       <LoginBox>
         <Column gap={64} alignItems="center">
-          <Image src="/logo.svg" width={245} height={80} alt="logo" />
-          <GoggleButton>
+          <Image src="/svgs/logo.svg" width={245} height={80} alt="logo" />
+          <GoggleButton onClick={handleLogin}>
             <Row gap={12} alignItems="center">
               <GoggleLogo />
               <Text fontType="Heading4" color={color.gray900}>
@@ -27,7 +30,6 @@ const LoginContent = () => {
     </StyledLoginPage>
   );
 };
-
 const LoginPage = () => (
   <Suspense fallback={<div>loading...</div>}>
     <LoginContent />
@@ -55,4 +57,5 @@ const GoggleButton = styled.div`
   cursor: pointer;
   padding: 16px 140px;
   border-radius: 6px;
+  z-index: 2;
 `;

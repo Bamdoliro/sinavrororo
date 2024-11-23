@@ -1,6 +1,6 @@
 import { color, font } from "@/styles";
 import { useBooleanState } from "@/hooks";
-import { IconInvisibleEye, IconVisibleEye } from "@public/svgs";
+import { IconInvisibleEye, IconVisibleEye } from "@public/icons";
 import { flex } from "@/utils";
 import styled, { css } from "styled-components";
 import type { InputProps } from "./Input.type";

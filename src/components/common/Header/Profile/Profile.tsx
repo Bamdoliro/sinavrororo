@@ -3,6 +3,7 @@ import { flex } from "@/utils";
 import styled from "styled-components";
 import { ProfileImg } from "@public/svgs";
 import { useBooleanState, useOutsideClick } from "@/hooks";
+import { useLogoutAction } from "./Profile.hooks";
 
 const Profile = () => {
   const {
@@ -10,6 +11,7 @@ const Profile = () => {
     toggle: toggleMenuOpen,
     setFalse: closeMenu,
   } = useBooleanState();
+  const { handleLogout } = useLogoutAction();
 
   const profileRef = useOutsideClick(closeMenu);
 
@@ -32,7 +34,7 @@ const Profile = () => {
             </NameMenu>
             <MenuItemList>
               <MenuItem onClick={() => {}}>비밀번호 변경</MenuItem>
-              <MenuItem onClick={() => {}}>로그아웃</MenuItem>
+              <MenuItem onClick={handleLogout}>로그아웃</MenuItem>
             </MenuItemList>
           </MenuList>
         </MenuListBox>

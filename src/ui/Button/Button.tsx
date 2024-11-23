@@ -1,4 +1,4 @@
-import { IconAddWhite } from "@public/svgs/index";
+import { IconAddWhite } from "@public/icons/index";
 import { color } from "@/styles";
 import { flex } from "@/utils";
 import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react";

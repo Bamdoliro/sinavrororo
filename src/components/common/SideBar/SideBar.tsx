@@ -14,7 +14,7 @@ import {
   IconSupportWhite,
   IconPhoneBlack,
   IconPhoneWhite,
-} from "@public/svgs/index";
+} from "@public/icons/index";
 import { Row } from "@/ui";
 
 const NAVIGATION_DATA = [
