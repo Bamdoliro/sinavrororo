@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  QueryClientProvider as MaruQueryClientProvider,
+  QueryClientProvider as SinabroQueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
@@ -25,10 +25,10 @@ const QueryClientProvider = ({ children }: PropsType) => {
   );
 
   return (
-    <MaruQueryClientProvider client={queryClient}>
+    <SinabroQueryClientProvider client={queryClient}>
       {children}
       <ReactQueryDevtools />
-    </MaruQueryClientProvider>
+    </SinabroQueryClientProvider>
   );
 };
 
