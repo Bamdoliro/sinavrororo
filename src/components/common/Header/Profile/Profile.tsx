@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ProfileImg } from "@public/svgs";
 import { useBooleanState, useOutsideClick } from "@/hooks";
 import { useLogoutAction } from "./Profile.hooks";
+import { useUser } from "@/hooks";
 
 const Profile = () => {
   const {
@@ -15,9 +16,7 @@ const Profile = () => {
 
   const profileRef = useOutsideClick(closeMenu);
 
-  const userData = {
-    name: "어드민 5",
-  };
+  const { userData } = useUser();
 
   return (
     <StyledProfile ref={profileRef}>

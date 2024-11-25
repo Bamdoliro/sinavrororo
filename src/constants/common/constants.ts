@@ -5,7 +5,6 @@ export const ROUTES = {
   FAQ: "/faq",
   FAQ_POST: "/faq/post",
   ALARM: "/alarm",
-  ALARM_POST: "alarm/post",
 } as const;
 
 export const TOKEN = {
@@ -15,4 +14,9 @@ export const TOKEN = {
 
 export const KEY = {
   LOGIN: "useLoginKey",
+  ADMIN: "useAdminKey",
+  LOGIN_CHECK: "useLoginCheck",
+  TOKEN: "useRefreshToken",
+  FAQ_LIST: "useFaqList",
+  FAQ_DETAIL: "useFaqDetail",
 };

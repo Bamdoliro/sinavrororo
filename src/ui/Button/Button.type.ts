@@ -1,4 +1,9 @@
-export type ButtonStyleType = "PRIMARY" | "SECONDARY" | "TERTIARY" | "DISABLED";
+export type ButtonStyleType =
+  | "PRIMARY"
+  | "SECONDARY"
+  | "TERTIARY"
+  | "QUATERNARY"
+  | "DISABLED";
 
 export type ButtonIcon = "NONE" | "ADD_ICON";
 

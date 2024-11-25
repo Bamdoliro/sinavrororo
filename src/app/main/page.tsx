@@ -7,6 +7,7 @@ import { color } from "@/styles";
 import { flex } from "@/utils";
 import InquiryBox from "@/components/main/InquiryBox/InquiryBox";
 import AlarmBox from "@/components/main/AlarmBox/AlarmBox";
+import withAuth from "@/hoc/withAuth";
 
 const HomePage = () => {
   return (
@@ -29,7 +30,7 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default withAuth(HomePage);
 
 const StyledHome = styled.div`
   ${flex({ flexDirection: "column" })}

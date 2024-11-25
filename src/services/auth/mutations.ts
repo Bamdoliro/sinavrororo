@@ -16,8 +16,8 @@ export const useLoginUriMutation = () => {
     if (code) {
       postLoginAdmin(code)
         .then((res) => {
-          Cookie.setItem("refresh-token", res.refreshToken);
-          localStorage.setItem("access-token", res.accessToken);
+          Cookie.setItem("refresh-token", res.data.refreshToken);
+          localStorage.setItem("access-token", res.data.accessToken);
           router.replace(ROUTES.MAIN);
         })
         .catch(handleError);

@@ -4,40 +4,10 @@ import FaqTableItem from "./FaqTableItem/FaqTableItem";
 import styled from "styled-components";
 import { color } from "@/styles";
 import useCTAButton from "./FaqTable.hooks";
+import { useFaqListQuery } from "@/services/faq/queries";
 
 const FaqTable = () => {
-  const FaqList = [
-    {
-      id: 1,
-      title: "캐릭터가 제게 편지를 보내지 않아요",
-      content: "슬픕니다...",
-      date: "2024.09.25",
-    },
-    {
-      id: 2,
-      title: "캐릭터가 제게 편지를 보내지 않아요",
-      content: "슬픕니다...",
-      date: "2024.09.25",
-    },
-    {
-      id: 3,
-      title: "캐릭터가 제게 편지를 보내지 않아요",
-      content: "슬픕니다...",
-      date: "2024.09.25",
-    },
-    {
-      id: 4,
-      title: "캐릭터가 제게 편지를 보내지 않아요",
-      content: "슬픕니다...",
-      date: "2024.09.25",
-    },
-    {
-      id: 5,
-      title: "캐릭터가 제게 편지를 보내지 않아요",
-      content: "슬픕니다...",
-      date: "2024.09.25",
-    },
-  ];
+  const { data: faqList } = useFaqListQuery();
 
   const { handleGoFaqPostPageButtonClick } = useCTAButton();
 
@@ -60,12 +30,13 @@ const FaqTable = () => {
         </TableSetting>
         <FaqTableHeader />
         <FaqTableItemContainer>
-          {FaqList &&
-            FaqList.map((item, index) => (
+          {faqList &&
+            faqList.map((item, index) => (
               <FaqTableItem
                 key={`faq item ${index}`}
+                id={item.id}
                 title={item.title}
-                date={item.date}
+                date={item.updatedAt}
               />
             ))}
         </FaqTableItemContainer>

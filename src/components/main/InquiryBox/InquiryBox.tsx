@@ -13,7 +13,7 @@ const InquiryBox = () => {
   const router = useRouter();
 
   return (
-    <StyledApplicationBox onClick={() => router.push(ROUTES.FAQ)}>
+    <StyledApplicationBox onClick={() => router.push(ROUTES.INQUIRY)}>
       <Column>
         <Row justifyContent="space-between">
           <Text fontType="Heading2" color={color.gray900}>

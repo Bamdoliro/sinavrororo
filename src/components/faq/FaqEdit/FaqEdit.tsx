@@ -1,17 +1,28 @@
+import { useFaqDetailQuery } from "@/services/faq/queries";
+import { resizeTextarea } from "@/utils";
 import { color, font } from "@/styles";
-import { Column, Button, Row } from "@/ui";
-import { flex, resizeTextarea } from "@/utils";
+import { Button, Column, Row } from "@/ui";
+import { flex } from "@/utils";
+import type { ChangeEventHandler } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { ChangeEventHandler, useRef, useState } from "react";
-import { useFaqPostAction } from "./FaqPost.hooks";
+import { useFaqEditAction, useFaqDeleteAction } from "./FaqEdit.hooks";
 
-const FaqPost = () => {
+interface Props {
+  id: number;
+}
+
+const FaqEdit = ({ id }: Props) => {
+  const { data: faqDetailData } = useFaqDetailQuery(id);
+
   const contentTextareaRef = useRef<HTMLTextAreaElement>(null);
-
   const [faqData, setFaqData] = useState({
-    title: "",
-    content: "",
+    title: faqDetailData?.title ?? "",
+    content: faqDetailData?.content ?? "",
   });
+
+  const { handleFaqEditButtonClick } = useFaqEditAction(id, faqData);
+  const { handleDeleteFaqButtonClick } = useFaqDeleteAction(id);
 
   const handleFaqDataChange: ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
@@ -22,13 +33,13 @@ const FaqPost = () => {
     resizeTextarea(contentTextareaRef);
   };
 
-  const { handleFaqPostButtonClick } = useFaqPostAction(faqData);
+  useEffect(() => resizeTextarea(contentTextareaRef), []);
 
   return (
-    <StyledFaqPost>
+    <StyledFaqEdit>
       <Column gap={48}>
         <FaqHeader>
-          <Column gap={20}>
+          <Column gap={20} style={{ width: "100%" }}>
             <TitleInput
               name="title"
               value={faqData.title}
@@ -37,8 +48,16 @@ const FaqPost = () => {
             />
           </Column>
           <Row gap={16} alignItems="flex-end">
-            <Button size="SMALL" width={156} onClick={handleFaqPostButtonClick}>
-              답글 남기기
+            <Button
+              size="SMALL"
+              width={156}
+              styleType="QUATERNARY"
+              onClick={handleDeleteFaqButtonClick}
+            >
+              삭제
+            </Button>
+            <Button size="SMALL" width={156} onClick={handleFaqEditButtonClick}>
+              수정
             </Button>
           </Row>
         </FaqHeader>
@@ -53,15 +72,15 @@ const FaqPost = () => {
           />
         </Column>
       </Column>
-    </StyledFaqPost>
+    </StyledFaqEdit>
   );
 };
 
-export default FaqPost;
+export default FaqEdit;
 
-const StyledFaqPost = styled.div`
+const StyledFaqEdit = styled.div`
   ${flex({ flexDirection: "column" })}
-  padding-top: 28px;
+  padding: 0px 7px;
 `;
 
 const FaqHeader = styled.div`
