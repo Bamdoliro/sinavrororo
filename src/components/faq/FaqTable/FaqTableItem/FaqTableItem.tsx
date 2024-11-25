@@ -2,16 +2,27 @@ import { ROUTES } from "@/constants/common/constants";
 import { color } from "@/styles";
 import { Row, Text } from "@/ui";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { formatDotDate } from "@/utils";
 
 interface Faq {
+  id: number;
   title: string;
   date: string;
 }
 
-const FaqTableItem = ({ title, date }: Faq) => {
+const FaqTableItem = ({ id, title, date }: Faq) => {
+  const [clearDate, setClearDate] = useState("");
+
+  useEffect(() => {
+    if (date) {
+      setClearDate(formatDotDate(date));
+    }
+  }, [date]);
+
   return (
-    <Link href={ROUTES.FAQ_POST} style={{ width: "100%" }}>
+    <Link href={`${ROUTES.FAQ}/${id}`} style={{ width: "100%" }}>
       <StyledFaqTableItem style={{ cursor: "pointer" }}>
         <TableItem>
           <Row gap={48} alignItems="center">
@@ -19,7 +30,7 @@ const FaqTableItem = ({ title, date }: Faq) => {
               {title}
             </Text>
             <Text fontType="B3" width={80} color={color.gray400}>
-              {date}
+              {clearDate}
             </Text>
           </Row>
         </TableItem>

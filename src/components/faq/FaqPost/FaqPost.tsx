@@ -3,6 +3,7 @@ import { Column, Button, Row } from "@/ui";
 import { flex, resizeTextarea } from "@/utils";
 import styled from "styled-components";
 import { ChangeEventHandler, useRef, useState } from "react";
+import { useFaqPostAction } from "./FaqPost.hooks";
 
 const FaqPost = () => {
   const contentTextareaRef = useRef<HTMLTextAreaElement>(null);
@@ -21,8 +22,10 @@ const FaqPost = () => {
     resizeTextarea(contentTextareaRef);
   };
 
+  const { handleFaqPostButtonClick } = useFaqPostAction(faqData);
+
   return (
-    <StyledFaqDetailContent>
+    <StyledFaqPost>
       <Column gap={48}>
         <FaqHeader>
           <Column gap={20}>
@@ -34,7 +37,7 @@ const FaqPost = () => {
             />
           </Column>
           <Row gap={16} alignItems="flex-end">
-            <Button size="SMALL" width={156} onClick={() => {}}>
+            <Button size="SMALL" width={156} onClick={handleFaqPostButtonClick}>
               답글 남기기
             </Button>
           </Row>
@@ -50,13 +53,13 @@ const FaqPost = () => {
           />
         </Column>
       </Column>
-    </StyledFaqDetailContent>
+    </StyledFaqPost>
   );
 };
 
 export default FaqPost;
 
-const StyledFaqDetailContent = styled.div`
+const StyledFaqPost = styled.div`
   ${flex({ flexDirection: "column" })}
   padding-top: 28px;
 `;

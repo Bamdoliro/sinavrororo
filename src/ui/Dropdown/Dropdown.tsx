@@ -1,6 +1,6 @@
 import { color } from "@/styles";
 import { useBooleanState, useOutsideClick } from "@/hooks";
-import { IconArrowBottom } from "@public/svgs";
+import { IconArrowBottom } from "@public/icons";
 import { flex } from "@/utils";
 import type { CSSProperties } from "react";
 import React from "react";

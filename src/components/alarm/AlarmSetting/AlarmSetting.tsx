@@ -1,62 +1,49 @@
-import { color } from "@/styles";
-import { Button, Column, Input, Row, Text } from "@/ui";
-import { formatClearDate, formatTime } from "@/utils";
-import { ChangeEvent, useState } from "react";
 import styled from "styled-components";
+import { color } from "@/styles";
+import { Button, Column, Input, Row } from "@/ui";
+import { flex } from "@/utils";
+import { ChangeEventHandler, useState } from "react";
+import { useAlarmPostAction } from "./AlarmSetting.hooks";
 
 const AlarmSetting = () => {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+  const [alarmData, setAlarmData] = useState({
+    title: "",
+    body: "",
+  });
 
-  const handleDateChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setDate(formatClearDate(value));
+  const handleAlarmDataChange: ChangeEventHandler<
+    HTMLInputElement | HTMLTextAreaElement
+  > = (e) => {
+    const { name, value } = e.target;
+    setAlarmData({ ...alarmData, [name]: value });
   };
 
-  const handleTimeChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setTime(formatTime(value));
-  };
+  const { handleAlarmPostButtonClick } = useAlarmPostAction(alarmData);
 
   return (
     <AlarmSettingContent>
       <AlarmSettingBox>
-        <Column gap={80} alignItems="center">
+        <Column gap={152} alignItems="center">
           <Column gap={24}>
             <Input
+              name="title"
+              label="푸시 알림 제목"
+              placeholder="푸시 알림의 제목을 삽입해주세요"
+              onChange={handleAlarmDataChange}
+              value={alarmData.title}
+            />
+            <Input
+              name="body"
               label="푸시 알림 내용"
               placeholder="푸시 알림의 내용을 삽입해주세요"
-            ></Input>
-            <Column gap={8}>
-              <Text fontType="Headline1" color={color.gray600}>
-                알림 유형
-              </Text>
-              <Row gap={10}>
-                <Button styleType="SECONDARY" size="SELECT">
-                  요일 반복
-                </Button>
-                <Button styleType="SECONDARY" size="SELECT">
-                  요일 반복
-                </Button>
-              </Row>
-            </Column>
-            <Input
-              label="날짜 (8자리)"
-              placeholder="            -            -"
-              icon="CALENDAR"
-              value={date}
-              onChange={handleDateChange}
-            ></Input>
-            <Input
-              label="시간 (4자리)"
-              placeholder="            :"
-              icon="TIME"
-              value={time}
-              onChange={handleTimeChange}
-            ></Input>
+              onChange={handleAlarmDataChange}
+              value={alarmData.body}
+            />
           </Column>
           <Row>
-            <Button size="SMALL">새로운 알림 설정하기</Button>
+            <Button size="SMALL" onClick={handleAlarmPostButtonClick}>
+              알림 전송하기
+            </Button>
           </Row>
         </Column>
       </AlarmSettingBox>
@@ -67,11 +54,11 @@ const AlarmSetting = () => {
 export default AlarmSetting;
 
 const AlarmSettingContent = styled.div`
-  background-color: ${color.gray50};
-  border: 1px solid ${color.gray250};
-  border-radius: 12px;
+  ${flex({ justifyContent: "center", alignItems: "center" })}
 `;
 
 const AlarmSettingBox = styled.div`
+  background-color: ${color.gray50};
   padding: 56px 70px;
+  border-radius: 12px;
 `;

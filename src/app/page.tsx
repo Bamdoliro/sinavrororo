@@ -4,52 +4,32 @@ import { flex } from "@/utils";
 import { Suspense } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import { Button, Column, Input } from "@/ui";
+import { Column, Row, Text } from "@/ui";
 import { color } from "@/styles";
-import PreviewInput from "@/ui/Input/PreviewInput";
+import { GoggleLogo } from "@public/svgs";
+import { useLoginAction } from "./login.hooks";
 
 const LoginContent = () => {
-  const handleEnterKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      handleLogin();
-    }
-  };
-
-  const handleLogin = () => {};
+  const { handleLogin } = useLoginAction();
 
   return (
     <StyledLoginPage>
       <LoginBox>
-        <Column gap={64} alignItems="center" width={446}>
-          <Image src="/logo.svg" width={245} height={80} alt="logo" />
-          <Column gap={48} width="100%">
-            <Column gap={16}>
-              <Input
-                label="아이디"
-                width="100%"
-                name="id"
-                onChange={() => {}}
-              />
-              <PreviewInput
-                label="비밀번호"
-                width="100%"
-                name="password"
-                onChange={() => {}}
-                onKeyDown={handleEnterKeyPress}
-              />
-            </Column>
-            <Column gap="16px" alignItems="flex-end">
-              <Button width="100%" onClick={handleLogin}>
-                로그인
-              </Button>
-            </Column>
-          </Column>
+        <Column gap={64} alignItems="center">
+          <Image src="/svgs/logo.svg" width={245} height={80} alt="logo" />
+          <GoggleButton onClick={handleLogin}>
+            <Row gap={12} alignItems="center">
+              <GoggleLogo />
+              <Text fontType="Heading4" color={color.gray900}>
+                구글로 시작하기
+              </Text>
+            </Row>
+          </GoggleButton>
         </Column>
       </LoginBox>
     </StyledLoginPage>
   );
 };
-
 const LoginPage = () => (
   <Suspense fallback={<div>loading...</div>}>
     <LoginContent />
@@ -70,4 +50,12 @@ const LoginBox = styled.div`
   width: 818px;
   height: 100%;
   background-color: ${color.white100};
+`;
+
+const GoggleButton = styled.div`
+  background-color: ${color.adminGray100};
+  cursor: pointer;
+  padding: 16px 140px;
+  border-radius: 6px;
+  z-index: 2;
 `;

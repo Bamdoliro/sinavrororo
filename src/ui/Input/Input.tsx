@@ -1,5 +1,5 @@
 import { color, font } from "@/styles";
-import { IconCalendar, IconTime, IconError } from "@public/svgs/index";
+import { IconCalendar, IconTime, IconError } from "@public/icons/index";
 import React from "react";
 import styled, { css } from "styled-components";
 import type { InputProps } from "./Input.type";

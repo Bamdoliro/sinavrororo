@@ -3,7 +3,7 @@
 import InquiryDetailContent from "@/components/inquiry/InquiryDetailContent/InquiryDetailContent";
 import { ROUTES } from "@/constants/common/constants";
 import AppLayout from "@/layouts/AppLayout";
-import { IconArrowLeft } from "@public/svgs";
+import { IconArrowLeft } from "@public/icons";
 import { color } from "@/styles";
 import { flex } from "@/utils";
 import Link from "next/link";

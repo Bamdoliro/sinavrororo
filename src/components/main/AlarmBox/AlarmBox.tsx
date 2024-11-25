@@ -12,7 +12,7 @@ const AlarmBox = () => {
   const TIME_DATA = ["12:00", "22:00"];
 
   return (
-    <StyledApplicationBox onClick={() => router.push(ROUTES.FAQ)}>
+    <StyledApplicationBox onClick={() => router.push(ROUTES.ALARM)}>
       <Column>
         <Row justifyContent="space-between">
           <Text fontType="Heading2" color={color.gray900}>

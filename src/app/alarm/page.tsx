@@ -2,20 +2,16 @@
 
 import { styled } from "styled-components";
 import AppLayout from "@/layouts/AppLayout";
-import { Button, Row, Text } from "@/ui";
+import { Column, Row, Text } from "@/ui";
 import { color } from "@/styles";
 import { flex } from "@/utils";
-import AlarmDateCategory from "@/components/alarm/AlarmDateCategory/AlarmDateCategory";
-import AlarmTimeCategory from "@/components/alarm/AlarmTimeCategory copy/AlarmTimeCategory";
-import useCTAButton from "./alarm.hooks";
+import AlarmSetting from "@/components/alarm/AlarmSetting/AlarmSetting";
 
 const FaqPage = () => {
-  const { handleGoAlarmSettingPageButtonClick } = useCTAButton();
-
   return (
     <AppLayout>
       <StyledFaq>
-        <Row justifyContent="space-between" alignItems="center">
+        <Column style={{ height: "100%" }}>
           <Title>
             <Text fontType="H1" color={color.gray900}>
               알림
@@ -24,16 +20,10 @@ const FaqPage = () => {
               울릴 알림을 관리할 수 있어요.
             </Text>
           </Title>
-          <Button
-            icon="ADD_ICON"
-            size="ICON"
-            onClick={handleGoAlarmSettingPageButtonClick}
-          >
-            알림 생성
-          </Button>
-        </Row>
-        <AlarmDateCategory />
-        <AlarmTimeCategory />
+          <Row justifyContent="center" style={{ height: "100%" }}>
+            <AlarmSetting />
+          </Row>
+        </Column>
       </StyledFaq>
     </AppLayout>
   );
@@ -46,7 +36,7 @@ const StyledFaq = styled.div`
   gap: 40px;
   width: 100%;
   height: 100%;
-  padding: 3.75rem 4rem 0rem 3.75rem;
+  padding: 3.75rem 4rem 3.75rem 3.75rem;
   overflow: auto;
 `;
 

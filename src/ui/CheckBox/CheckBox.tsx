@@ -1,7 +1,7 @@
 import { color } from "@/styles";
 import { flex } from "@/utils";
 import { styled } from "styled-components";
-import { IconCheck } from "@public/svgs";
+import { IconCheck } from "@public/icons";
 import { useState } from "react";
 
 interface Props {
