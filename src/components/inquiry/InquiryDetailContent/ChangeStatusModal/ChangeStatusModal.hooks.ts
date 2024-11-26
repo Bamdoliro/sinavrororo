@@ -1,6 +1,5 @@
 import { ROUTES } from "@/constants/common/constants";
 import { useChangeInquiryStatusMutation } from "@/services/inquiry/mutations";
-import type { InquiryStatusType } from "@/types/inquiry/client";
 import { PostInquiryStatusReq } from "@/types/inquiry/remote";
 
 export const useChangeInquiryStatusAction = (
@@ -16,6 +15,7 @@ export const useChangeInquiryStatusAction = (
 
   const handleChangeInquiryStatusButtonClick = () => {
     changeInquiryStatus();
+    window.location.href = ROUTES.INQUIRY;
   };
 
   return { handleChangeInquiryStatusButtonClick };

@@ -1,5 +1,4 @@
 import { useApiError } from "@/hooks";
-import { InquiryStatus, InquiryStatusType } from "@/types/inquiry/client";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { patchInquiryStatus, postInquiryAnswer } from "./api";

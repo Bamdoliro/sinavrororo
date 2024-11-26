@@ -1,5 +1,4 @@
 import { usePostInquiryAnswerMutation } from "@/services/inquiry/mutations";
-import type { PostInquiryAnswerReq } from "@/types/inquiry/remote";
 
 export const useInquiryAnswerPostAction = (
   id: number,

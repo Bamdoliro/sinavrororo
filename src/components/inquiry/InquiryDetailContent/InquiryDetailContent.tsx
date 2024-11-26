@@ -28,7 +28,7 @@ const InquiryDetailContent = ({ id }: Props) => {
         onConfirm={() => close()}
       />
     ));
-  }, [overlay]);
+  }, [overlay, id]);
 
   const openInquiryStatusChainging = useCallback(() => {
     overlay.open(({ isOpen, close }) => (
