@@ -1,12 +1,9 @@
 import { color } from "@/styles";
-import { CheckBox, Dropdown, Row } from "@/ui";
+import { Dropdown, Row } from "@/ui";
 import { flex } from "@/utils";
-import { useState } from "react";
 import styled from "styled-components";
 
 const InquiryTableHeader = () => {
-  const [isInquiryAllSelected] = useState(false);
-
   return (
     <StyledInquiryTableHeader>
       <Row
@@ -15,7 +12,6 @@ const InquiryTableHeader = () => {
         justifyContent="space-between"
         style={{ width: "100%" }}
       >
-        <CheckBox checked={isInquiryAllSelected} onCheckChange={() => {}} />
         <Row gap={76} alignItems="center">
           <Dropdown
             data={[

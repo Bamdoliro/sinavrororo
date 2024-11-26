@@ -1,6 +1,6 @@
 import { ROUTES } from "@/constants/common/constants";
 import { color } from "@/styles";
-import { CheckBox, Column, Row, Text } from "@/ui";
+import { Column, Row, Text } from "@/ui";
 import Link from "next/link";
 import { useState } from "react";
 import styled from "styled-components";
@@ -14,14 +14,11 @@ interface Inquiry {
 }
 
 const InquiryTableItem = ({ id, title, state, date, time }: Inquiry) => {
-  const [isInquirySelecting] = useState(false);
-
   return (
     <Link href={`${ROUTES.INQUIRY}/${id}`} style={{ width: "100%" }}>
       <StyledInquiryTableItem style={{ cursor: "pointer" }}>
         <TableItem>
           <Row gap={48} alignItems="center">
-            <CheckBox checked={isInquirySelecting} />
             <Text fontType="B2" width={"68%"}>
               {title}
             </Text>
