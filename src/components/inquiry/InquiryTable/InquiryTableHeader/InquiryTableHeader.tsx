@@ -1,40 +1,43 @@
+import { useSetInquiryListStatusTypeStore } from "@/store/inquiry/inquiry";
 import { color } from "@/styles";
-import { CheckBox, Dropdown, Row } from "@/ui";
+import { InquiryStatusType } from "@/types/inquiry/client";
+import { Dropdown, Row } from "@/ui";
 import { flex } from "@/utils";
-import { useState } from "react";
 import styled from "styled-components";
 
 const InquiryTableHeader = () => {
-  const [isInquiryAllSelected] = useState(false);
+  const setInquiryStatusType = useSetInquiryListStatusTypeStore();
+
+  const handleChangeStatusSort = (value: string) => {
+    setInquiryStatusType(value as InquiryStatusType);
+  };
 
   return (
     <StyledInquiryTableHeader>
       <Row
         gap={48}
         alignItems="center"
-        justifyContent="space-between"
+        justifyContent="flex-end"
         style={{ width: "100%" }}
       >
-        <CheckBox checked={isInquiryAllSelected} onCheckChange={() => {}} />
-        <Row gap={76} alignItems="center">
+        <Row gap={76}>
           <Dropdown
             data={[
-              { value: "진행", label: "계속" },
-              { value: "진행", label: "중단" },
-              { value: "대기", label: "대기" },
-              { value: "진행", label: "진행" },
+              { value: "WAITING", label: "대기" },
+              { value: "IN_PROGRESS", label: "진행" },
+              { value: "COMPLETED", label: "완료" },
             ]}
-            onChange={() => {}}
-            name="드랍다운"
+            onChange={handleChangeStatusSort}
+            name="statusSort"
             label="상태"
           />
           <Dropdown
             data={[
-              { value: "빠른 순", label: "빠른 순" },
-              { value: "느린 순", label: "느린 순" },
+              { value: "FAST", label: "빠른 순" },
+              { value: "SLOW", label: "느린 순" },
             ]}
             onChange={() => {}}
-            name="드라"
+            name="orderSort"
             label="등록 일시"
           />
         </Row>
@@ -48,7 +51,7 @@ export default InquiryTableHeader;
 const StyledInquiryTableHeader = styled.div`
   ${flex({ alignItems: "center" })}
   background-color: ${color.gray100};
-  padding: 8px 40px;
+  padding: 8px 112px 8px 40px;
   width: 100%;
   border-top: 1px solid ${color.adminGray400};
   border-bottom: 1px solid ${color.adminGray400};

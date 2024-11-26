@@ -1,32 +1,35 @@
 import { ROUTES } from "@/constants/common/constants";
+import { INQUIRY_STATUS_CATEGORY } from "@/constants/inquiry/constants";
 import { color } from "@/styles";
-import { CheckBox, Column, Row, Text } from "@/ui";
+import { InquiryStatusType } from "@/types/inquiry/client";
+import { Column, Row, Text } from "@/ui";
+import { formatDotDate, formatDotTime } from "@/utils";
 import Link from "next/link";
-import { useState } from "react";
 import styled from "styled-components";
 
 interface Inquiry {
   id: number;
   title: string;
-  state: string;
-  date: string;
-  time: string;
+  status: string;
+  updateAt: string;
 }
 
-const InquiryTableItem = ({ id, title, state, date, time }: Inquiry) => {
-  const [isInquirySelecting] = useState(false);
+const InquiryTableItem = ({ id, title, status, updateAt }: Inquiry) => {
+  const date = formatDotDate(updateAt);
+  const time = formatDotTime(updateAt);
 
   return (
     <Link href={`${ROUTES.INQUIRY}/${id}`} style={{ width: "100%" }}>
       <StyledInquiryTableItem style={{ cursor: "pointer" }}>
         <TableItem>
           <Row gap={48} alignItems="center">
-            <CheckBox checked={isInquirySelecting} />
             <Text fontType="B2" width={"68%"}>
               {title}
             </Text>
             <Text fontType="B3" width={70} color={color.gray400}>
-              {state}
+              {status
+                ? INQUIRY_STATUS_CATEGORY[status as InquiryStatusType]
+                : undefined}
             </Text>
             <Column alignItems="center">
               <Text fontType="B3" width={80} color={color.gray400}>

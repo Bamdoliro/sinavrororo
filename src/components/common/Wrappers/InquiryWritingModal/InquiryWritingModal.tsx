@@ -3,13 +3,15 @@ import { Button, Column, Row, Text, Textarea } from "@/ui";
 import { flex } from "@/utils";
 import { useState } from "react";
 import styled from "styled-components";
+import { useInquiryAnswerPostAction } from "./InquiryWritingModal.hooks";
 
 interface Props {
+  id: number;
   isOpen: boolean;
   onClose: () => void;
   onConfirm: () => void;
 }
-const InquiryWritingModal = ({ isOpen, onClose, onConfirm }: Props) => {
+const InquiryWritingModal = ({ id, isOpen, onClose, onConfirm }: Props) => {
   const [coverLetter, setCoverLetter] = useState("");
   const [isCoverLetterError, setIsCoverLetterError] = useState(false);
 
@@ -17,8 +19,19 @@ const InquiryWritingModal = ({ isOpen, onClose, onConfirm }: Props) => {
     e: React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     const value = e.target.value;
+
     setCoverLetter(value);
     setIsCoverLetterError(value.trim() === "");
+  };
+
+  const { handleInquiryAnswerPost } = useInquiryAnswerPostAction(
+    id,
+    coverLetter
+  );
+
+  const handleInquiryAnswerPostButtonClick = () => {
+    handleInquiryAnswerPost();
+    onConfirm();
   };
 
   return (
@@ -55,7 +68,7 @@ const InquiryWritingModal = ({ isOpen, onClose, onConfirm }: Props) => {
             <Button styleType="TERTIARY" size="SMALL" onClick={onClose}>
               취소
             </Button>
-            <Button size="SMALL" onClick={onConfirm}>
+            <Button size="SMALL" onClick={handleInquiryAnswerPostButtonClick}>
               작성 완료
             </Button>
           </Row>
