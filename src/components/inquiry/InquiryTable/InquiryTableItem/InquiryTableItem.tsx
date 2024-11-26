@@ -2,7 +2,6 @@ import { ROUTES } from "@/constants/common/constants";
 import { color } from "@/styles";
 import { Column, Row, Text } from "@/ui";
 import Link from "next/link";
-import { useState } from "react";
 import styled from "styled-components";
 
 interface Inquiry {

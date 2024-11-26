@@ -19,3 +19,5 @@ export { default as IconArrowBottom } from "./IconArrowBottom";
 export { default as IconEye } from "./IconVisibleEye";
 export { default as IconVisibleEye } from "./IconVisibleEye";
 export { default as IconInvisibleEye } from "./IconInvisibleEye";
+export { default as IconArrowDrop } from "./IconArrowDown";
+export { default as IconArrowUp } from "./IconArrowUp";
