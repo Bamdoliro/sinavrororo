@@ -1,14 +1,15 @@
 import { useApiError } from "@/hooks";
-import { InquiryStatus } from "@/types/inquiry/client";
+import { InquiryStatus, InquiryStatusType } from "@/types/inquiry/client";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { patchInquiryStatus, postInquiryAnswer } from "./api";
 import { useRouter } from "next/navigation";
 import { ROUTES } from "@/constants/common/constants";
+import { PostInquiryStatusReq } from "@/types/inquiry/remote";
 
 export const useChangeInquiryStatusMutation = (
   id: number,
-  status: InquiryStatus,
+  status: PostInquiryStatusReq,
   closeModal: () => void
 ) => {
   const { handleError } = useApiError();

@@ -1,4 +1,4 @@
-import { Inquiry, InquiryDetail } from "./client";
+import { Inquiry, InquiryDetail, InquiryStatusType } from "./client";
 
 export interface GetInquiryListRes {
   dataList: Inquiry[];
@@ -10,4 +10,8 @@ export interface GetInquiryDetailRes {
 
 export interface PostInquiryAnswerReq {
   content: string;
+}
+
+export interface PostInquiryStatusReq {
+  status: InquiryStatusType;
 }

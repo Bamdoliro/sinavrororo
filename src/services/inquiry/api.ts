@@ -1,13 +1,13 @@
 import { sinabro } from "@/apis/instance/instace";
 import { authorization } from "@/apis/token";
-import type { InquiryStatusType, InquiryStatus } from "@/types/inquiry/client";
+import type { InquiryStatusType } from "@/types/inquiry/client";
 import {
   GetInquiryDetailRes,
   GetInquiryListRes,
-  PostInquiryAnswerReq,
+  PostInquiryStatusReq,
 } from "@/types/inquiry/remote";
 
-export const patchInquiryStatus = async (id: number, status: InquiryStatus) => {
+export const patchInquiryStatus = async (id: number, status: PostInquiryStatusReq) => {
   console.log(id, status);
   const { data } = await sinabro.patch(
     `/admin/inquiries/${id}`,

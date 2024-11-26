@@ -26,4 +26,4 @@ export interface Answer {
   content: string;
 }
 
-export type InquiryStatusType = "WAITING" | "IN_PROGRESS" | "COMPLETED";
+export type InquiryStatusType = "WAITING" | "IN_PROGRESS" | "COMPLETED" | "";

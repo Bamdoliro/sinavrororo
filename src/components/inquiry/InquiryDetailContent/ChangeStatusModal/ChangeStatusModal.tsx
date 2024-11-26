@@ -1,4 +1,4 @@
-import type { InquiryStatus } from "@/types/inquiry/client";
+import type { InquiryStatus, InquiryStatusType } from "@/types/inquiry/client";
 import { color } from "@/styles";
 import { Button, Column, Row, Text } from "@/ui";
 import { flex } from "@/utils";
@@ -14,12 +14,16 @@ interface Props {
 }
 
 const StatusChangeModal = ({ id, isOpen, onClose }: Props) => {
-  const [approvalStatus, setApprovalStatus] = useState<InquiryStatus | "">("");
+  const [approvalStatus, setApprovalStatus] = useState<{
+    status: InquiryStatusType | "";
+  }>({
+    status: "",
+  });
 
   const handleApprovalRadioChange: ChangeEventHandler<HTMLInputElement> = (
     e
   ) => {
-    setApprovalStatus(e.target.value as InquiryStatus);
+    setApprovalStatus({ status: e.target.value as InquiryStatusType });
   };
 
   const { handleChangeInquiryStatusButtonClick } = useChangeInquiryStatusAction(
@@ -44,11 +48,15 @@ const StatusChangeModal = ({ id, isOpen, onClose }: Props) => {
         <Row gap={12} justifyContent="center">
           <CardRadio
             approvalStatusType="대기"
-            $checked={approvalStatus === "대기"}
+            $checked={approvalStatus.status === "WAITING"}
           >
             <Text
               fontType="Heading3"
-              color={approvalStatus === "대기" ? color.white100 : color.gray900}
+              color={
+                approvalStatus.status === "WAITING"
+                  ? color.white100
+                  : color.gray900
+              }
             >
               대기
             </Text>
@@ -62,11 +70,15 @@ const StatusChangeModal = ({ id, isOpen, onClose }: Props) => {
           </CardRadio>
           <CardRadio
             approvalStatusType="진행"
-            $checked={approvalStatus === "진행"}
+            $checked={approvalStatus.status === "IN_PROGRESS"}
           >
             <Text
               fontType="Heading3"
-              color={approvalStatus === "진행" ? color.white100 : color.gray900}
+              color={
+                approvalStatus.status === "IN_PROGRESS"
+                  ? color.white100
+                  : color.gray900
+              }
             >
               진행
             </Text>
@@ -80,11 +92,15 @@ const StatusChangeModal = ({ id, isOpen, onClose }: Props) => {
           </CardRadio>
           <CardRadio
             approvalStatusType="완료"
-            $checked={approvalStatus === "완료"}
+            $checked={approvalStatus.status === "COMPLETED"}
           >
             <Text
               fontType="Heading3"
-              color={approvalStatus === "완료" ? color.white100 : color.gray900}
+              color={
+                approvalStatus.status === "COMPLETED"
+                  ? color.white100
+                  : color.gray900
+              }
             >
               완료
             </Text>
