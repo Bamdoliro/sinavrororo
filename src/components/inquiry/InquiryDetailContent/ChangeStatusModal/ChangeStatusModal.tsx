@@ -55,7 +55,7 @@ const StatusChangeModal = ({ id, isOpen, onClose }: Props) => {
             <input
               type="radio"
               name="approvalStatus"
-              value="대기"
+              value="WAITING"
               onChange={handleApprovalRadioChange}
               hidden
             />
@@ -73,7 +73,7 @@ const StatusChangeModal = ({ id, isOpen, onClose }: Props) => {
             <input
               type="radio"
               name="approvalStatus"
-              value="진행"
+              value="IN_PROGRESS"
               onChange={handleApprovalRadioChange}
               hidden
             />
@@ -91,7 +91,7 @@ const StatusChangeModal = ({ id, isOpen, onClose }: Props) => {
             <input
               type="radio"
               name="approvalStatus"
-              value="완료"
+              value="COMPLETED"
               onChange={handleApprovalRadioChange}
               hidden
             />

@@ -8,6 +8,7 @@ import { useCallback, useState } from "react";
 import { useOverlay } from "@toss/use-overlay";
 import IconArrowDown from "@public/icons/IconArrowDown";
 import { IconArrowUp } from "@public/icons";
+import { useInquiryDetailQuery } from "@/services/inquiry/queries";
 
 interface Props {
   id: number;
@@ -15,19 +16,13 @@ interface Props {
 const InquiryDetailContent = ({ id }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const data = [
-    { id: 1, title: "lorem1", content: "ipsum", answer: "한국말로 문의주세요" },
-    { id: 2, title: "lorem2", content: "ipsum" },
-    { id: 3, title: "lorem3", content: "ipsum" },
-    { id: 4, title: "lorem4", content: "ipsum" },
-    { id: 5, title: "lorem5", content: "ipsum" },
-  ];
-
+  const { data: inquiryDetailData } = useInquiryDetailQuery(id);
   const overlay = useOverlay();
 
   const openInquiryWritingModal = useCallback(() => {
     overlay.open(({ isOpen, close }) => (
       <InquiryWritingModal
+        id={id}
         isOpen={isOpen}
         onClose={close}
         onConfirm={() => close()}
@@ -41,13 +36,13 @@ const InquiryDetailContent = ({ id }: Props) => {
     ));
   }, [overlay, id]);
 
-  return data ? (
+  return inquiryDetailData ? (
     <StyledInquiryDetailContent>
       <Column gap={48}>
         <InquiryHeader>
           <Column gap={20}>
             <Text fontType="H2" color={color.gray900}>
-              {data[id - 1].title}
+              {inquiryDetailData.title}
             </Text>
           </Column>
           <Row gap={16} alignItems="flex-end">
@@ -66,9 +61,9 @@ const InquiryDetailContent = ({ id }: Props) => {
         </InquiryHeader>
         <Column gap={40}>
           <Text fontType="B1" color={color.gray600}>
-            {data[id - 1].content}
+            {inquiryDetailData.content}
           </Text>
-          {data[id - 1].answer && (
+          {inquiryDetailData.answerResponseList && (
             <Answer
               onClick={() => {
                 setIsOpen((prev) => !prev);
@@ -81,7 +76,9 @@ const InquiryDetailContent = ({ id }: Props) => {
                 </Row>
                 {isOpen && (
                   <Text fontType="B1" color={color.gray600}>
-                    {data[id - 1].answer}
+                    {inquiryDetailData.answerResponseList
+                      .map((answer) => answer.content)
+                      .join("\n")}
                   </Text>
                 )}
               </Column>

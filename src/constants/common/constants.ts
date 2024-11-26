@@ -20,4 +20,5 @@ export const KEY = {
   FAQ_LIST: "useFaqList",
   FAQ_DETAIL: "useFaqDetail",
   INQUIRY_LIST: "useInquiryList",
+  INQUIRY_DETAIL: "useInquiryDetail",
 };
