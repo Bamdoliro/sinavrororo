@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export const useCTAButton = () => {
   const router = useRouter();
 
-  const handleMoveFormPage = () => {
+  const handleMoveMainPage = () => {
     router.push(ROUTES.MAIN);
   };
 
@@ -13,7 +13,7 @@ export const useCTAButton = () => {
     router.push(ROUTES.MAIN);
   };
 
-  return { handleMoveFormPage, handleChangePassword };
+  return { handleMoveMainPage, handleChangePassword };
 };
 
 export const useLogoutAction = () => {

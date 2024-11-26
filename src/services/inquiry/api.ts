@@ -1,30 +1,36 @@
 import { sinabro } from "@/apis/instance/instace";
 import { authorization } from "@/apis/token";
-import type { InquiryStatus } from "@/types/inquiry/client";
+import type { InquiryListType, InquiryStatus } from "@/types/inquiry/client";
+import { GetInquiryListRes } from "@/types/inquiry/remote";
 
 export const patchInquiryStatus = async (id: number, status: InquiryStatus) => {
-  if (status === "진행") {
-    const { data } = await sinabro.patch(
-      `/form/${id}/reject`,
-      {},
-      authorization()
-    );
-
-    return data;
-  } else if (status === "완료") {
-    const { data } = await sinabro.patch(
-      `/form/${id}/approve`,
-      {},
-      authorization()
-    );
-
-    return data;
-  }
   const { data } = await sinabro.patch(
-    `/form/${id}/receive`,
-    {},
+    `/admin/inquiries/${id}`,
+    status,
     authorization()
   );
+  return data;
+};
 
+export const getInquiryList = async (inquiryListType: InquiryListType) => {
+  if (inquiryListType === "새로운 문의") {
+    const { data } = await sinabro.get<GetInquiryListRes>(
+      "/admin/inquiries?status=WAITING",
+      authorization()
+    );
+    return data;
+  }
+  if (inquiryListType === "완료된 문의") {
+    const { data } = await sinabro.get<GetInquiryListRes>(
+      "/admin/inquiries?status=COMPLETED",
+      authorization()
+    );
+    return data;
+  }
+
+  const { data } = await sinabro.get<GetInquiryListRes>(
+    "//admin/inquiries",
+    authorization()
+  );
   return data;
 };

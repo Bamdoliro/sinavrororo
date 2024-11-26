@@ -1,4 +1,4 @@
-const formatDate = (dateString: string): string => {
+const formatDate = (dateString: string) => {
   const parsedDate = new Date(dateString);
 
   return parsedDate

@@ -13,7 +13,7 @@ export const useChangeInquiryStatusMutation = (
   const { mutate: changeInquiryStatus, ...restMutation } = useMutation({
     mutationFn: () => patchInquiryStatus(id, status),
     onSuccess: () => {
-      toast("최종 접수 상태가 변경되었습니다.", { type: "success" });
+      toast("문의 상태가 변경되었습니다.", { type: "success" });
       closeModal();
     },
     onError: handleError,

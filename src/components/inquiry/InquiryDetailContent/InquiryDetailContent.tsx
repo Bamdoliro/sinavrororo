@@ -16,7 +16,7 @@ const InquiryDetailContent = ({ id }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const data = [
-    { id: 1, title: "lorem1", content: "ipsum", answer: "바너라ㅓㅁ나어리ㅏ" },
+    { id: 1, title: "lorem1", content: "ipsum", answer: "한국말로 문의주세요" },
     { id: 2, title: "lorem2", content: "ipsum" },
     { id: 3, title: "lorem3", content: "ipsum" },
     { id: 4, title: "lorem4", content: "ipsum" },
@@ -74,15 +74,17 @@ const InquiryDetailContent = ({ id }: Props) => {
                 setIsOpen((prev) => !prev);
               }}
             >
-              <Row alignItems="center">
-                <Text fontType="B3">밤돌이로의 답변 보기</Text>
-                {isOpen ? <IconArrowUp /> : <IconArrowDown />}
-              </Row>
-              {isOpen && (
-                <Text fontType="B1" color={color.gray600}>
-                  {data[id - 1].answer}
-                </Text>
-              )}
+              <Column gap={20}>
+                <Row alignItems="center">
+                  <Text fontType="B3">밤돌이로의 답변 보기</Text>
+                  {isOpen ? <IconArrowUp /> : <IconArrowDown />}
+                </Row>
+                {isOpen && (
+                  <Text fontType="B1" color={color.gray600}>
+                    {data[id - 1].answer}
+                  </Text>
+                )}
+              </Column>
             </Answer>
           )}
         </Column>

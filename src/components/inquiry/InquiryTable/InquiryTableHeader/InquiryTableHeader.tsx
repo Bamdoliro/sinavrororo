@@ -9,10 +9,10 @@ const InquiryTableHeader = () => {
       <Row
         gap={48}
         alignItems="center"
-        justifyContent="space-between"
+        justifyContent="flex-end"
         style={{ width: "100%" }}
       >
-        <Row gap={76} alignItems="center">
+        <Row gap={76}>
           <Dropdown
             data={[
               { value: "진행", label: "계속" },
@@ -44,7 +44,7 @@ export default InquiryTableHeader;
 const StyledInquiryTableHeader = styled.div`
   ${flex({ alignItems: "center" })}
   background-color: ${color.gray100};
-  padding: 8px 40px;
+  padding: 8px 112px 8px 40px;
   width: 100%;
   border-top: 1px solid ${color.adminGray400};
   border-bottom: 1px solid ${color.adminGray400};

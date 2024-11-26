@@ -1,18 +1,21 @@
 import { ROUTES } from "@/constants/common/constants";
 import { color } from "@/styles";
 import { Column, Row, Text } from "@/ui";
+import { formatDotDate, formatDotTime } from "@/utils";
 import Link from "next/link";
 import styled from "styled-components";
 
 interface Inquiry {
   id: number;
   title: string;
-  state: string;
-  date: string;
-  time: string;
+  status: string;
+  updateAt: string;
 }
 
-const InquiryTableItem = ({ id, title, state, date, time }: Inquiry) => {
+const InquiryTableItem = ({ id, title, status, updateAt }: Inquiry) => {
+  const date = formatDotDate(updateAt);
+  const time = formatDotTime(updateAt);
+
   return (
     <Link href={`${ROUTES.INQUIRY}/${id}`} style={{ width: "100%" }}>
       <StyledInquiryTableItem style={{ cursor: "pointer" }}>
@@ -22,7 +25,7 @@ const InquiryTableItem = ({ id, title, state, date, time }: Inquiry) => {
               {title}
             </Text>
             <Text fontType="B3" width={70} color={color.gray400}>
-              {state}
+              {status}
             </Text>
             <Column alignItems="center">
               <Text fontType="B3" width={80} color={color.gray400}>

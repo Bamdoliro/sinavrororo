@@ -19,4 +19,5 @@ export const KEY = {
   TOKEN: "useRefreshToken",
   FAQ_LIST: "useFaqList",
   FAQ_DETAIL: "useFaqDetail",
+  INQUIRY_LIST: "useInquiryList",
 };
