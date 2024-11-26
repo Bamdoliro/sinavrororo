@@ -14,4 +14,4 @@ export interface User {
   authority: string;
 }
 
-export type InquiryListType = "새로운 문의" | "완료된 문의";
+export type InquiryStatusType = "WAITING" | "IN_PROGRESS" | "COMPLETED";

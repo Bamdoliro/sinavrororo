@@ -1,5 +1,7 @@
 import { ROUTES } from "@/constants/common/constants";
+import { INQUIRY_STATUS_CATEGORY } from "@/constants/inquiry/constants";
 import { color } from "@/styles";
+import { InquiryStatusType } from "@/types/inquiry/client";
 import { Column, Row, Text } from "@/ui";
 import { formatDotDate, formatDotTime } from "@/utils";
 import Link from "next/link";
@@ -25,7 +27,9 @@ const InquiryTableItem = ({ id, title, status, updateAt }: Inquiry) => {
               {title}
             </Text>
             <Text fontType="B3" width={70} color={color.gray400}>
-              {status}
+              {status
+                ? INQUIRY_STATUS_CATEGORY[status as InquiryStatusType]
+                : undefined}
             </Text>
             <Column alignItems="center">
               <Text fontType="B3" width={80} color={color.gray400}>

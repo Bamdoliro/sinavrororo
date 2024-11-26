@@ -1,21 +1,22 @@
 import { Text, Column, Row, SearchInput } from "@/ui";
-
 import InquiryTableHeader from "./InquiryTableHeader/InquiryTableHeader";
 import InquiryTableItem from "./InquiryTableItem/InquiryTableItem";
 import styled from "styled-components";
 import { color } from "@/styles";
 import { Toggle } from "@/ui";
-import { useState } from "react";
 import { useInquiryListQuery } from "@/services/inquiry/queries";
+import { useInquiryListStatusTypeStore } from "@/store/inquiry/inquiry";
+import { InquiryStatusType } from "@/types/inquiry/client";
 
 const InquiryTable = () => {
   const { data: InquiryList } = useInquiryListQuery();
 
-  const inquiryCount = 100;
-  const [inquiryType, setInquiryType] = useState("새로운 문의");
+  const inquiryCount = InquiryList?.length;
+  const [inquiryStatusType, setInquiryStatusType] =
+    useInquiryListStatusTypeStore();
 
   const handleToggleChange = (value: string) => {
-    setInquiryType(value);
+    setInquiryStatusType(value as InquiryStatusType);
   };
 
   return (
@@ -25,8 +26,11 @@ const InquiryTable = () => {
           <Column gap={20}>
             <Row justifyContent="space-between">
               <Toggle
-                data={["새로운 문의", "완료된 문의"]}
-                value={inquiryType}
+                data={[
+                  { value: "WAITING", label: "새로운 문의" },
+                  { value: "COMPLETED", label: "완료된 문의" },
+                ]}
+                value={inquiryStatusType}
                 onChange={handleToggleChange}
               />
               <SearchInput placeholder="찾고 싶은 문의를 검색해주세요" />
