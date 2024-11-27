@@ -2,8 +2,6 @@ import { color } from "@/styles";
 import { Button, Column, Row, Text } from "@/ui/index";
 import { flex } from "@/utils";
 import styled from "styled-components";
-import { useRouter } from "next/navigation";
-import { ROUTES } from "@/constants/common/constants";
 import { useState } from "react";
 import { New } from "@public/svgs";
 import { useInquiryListQuery } from "@/services/inquiry/queries";
@@ -13,11 +11,10 @@ const InquiryBox = () => {
 
   const InquiryCount = InquiryList?.length;
 
-  const isNewInquiry = useState(true);
-  const router = useRouter();
+  const [isNewInquiry] = useState(InquiryCount);
 
   return (
-    <StyledApplicationBox onClick={() => router.push(ROUTES.INQUIRY)}>
+    <StyledApplicationBox>
       <Column>
         <Row justifyContent="space-between">
           <Text fontType="Heading2" color={color.gray900}>

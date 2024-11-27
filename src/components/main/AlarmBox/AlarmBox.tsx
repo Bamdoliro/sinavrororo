@@ -2,14 +2,10 @@ import { color } from "@/styles";
 import { Button, Column, Row, Text } from "@/ui/index";
 import { flex } from "@/utils";
 import styled from "styled-components";
-import { useRouter } from "next/navigation";
-import { ROUTES } from "@/constants/common/constants";
 
 const AlarmBox = () => {
-  const router = useRouter();
-
   return (
-    <StyledApplicationBox onClick={() => router.push(ROUTES.ALARM)}>
+    <StyledApplicationBox>
       <Column gap={12}>
         <Row justifyContent="flex-start">
           <Text fontType="Heading2" color={color.gray900}>
