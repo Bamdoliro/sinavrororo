@@ -6,9 +6,13 @@ import { useRouter } from "next/navigation";
 import { ROUTES } from "@/constants/common/constants";
 import { useState } from "react";
 import { New } from "@public/svgs";
+import { useInquiryListQuery } from "@/services/inquiry/queries";
 
 const InquiryBox = () => {
-  const InquiryCount = 8;
+  const { data: InquiryList } = useInquiryListQuery();
+
+  const InquiryCount = InquiryList?.length;
+
   const isNewInquiry = useState(true);
   const router = useRouter();
 
