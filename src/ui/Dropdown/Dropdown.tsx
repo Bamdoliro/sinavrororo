@@ -97,7 +97,7 @@ const StyledDropdown = styled.div<{
   size: DropdownSizeOption;
   disabled: boolean;
 }>`
-  ${flex({ alignItems: "center", justifyContent: "flex-end" })}
+  ${flex({ alignItems: "center", justifyContent: "center" })}
   border-radius: 6px;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   background-color: transparent;

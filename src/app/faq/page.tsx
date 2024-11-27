@@ -16,7 +16,7 @@ const FaqPage = () => {
             자주 묻는 질문
           </Text>
           <Text fontType="B2" color={color.gray600}>
-            자주 묻는 질물들을 관리할 수 있어요.
+            자주 묻는 질문들을 관리할 수 있어요.
           </Text>
         </Title>
         <FaqTable />

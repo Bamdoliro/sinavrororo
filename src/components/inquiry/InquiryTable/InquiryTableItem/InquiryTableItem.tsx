@@ -22,23 +22,32 @@ const InquiryTableItem = ({ id, title, status, updateAt }: Inquiry) => {
     <Link href={`${ROUTES.INQUIRY}/${id}`} style={{ width: "100%" }}>
       <StyledInquiryTableItem style={{ cursor: "pointer" }}>
         <TableItem>
-          <Row gap={48} alignItems="center">
+          <Row gap={48} alignItems="center" justifyContent="space-between">
             <Text fontType="B2" width={"68%"}>
               {title}
             </Text>
-            <Text fontType="B3" width={70} color={color.gray400}>
-              {status
-                ? INQUIRY_STATUS_CATEGORY[status as InquiryStatusType]
-                : undefined}
-            </Text>
-            <Column alignItems="center">
-              <Text fontType="B3" width={80} color={color.gray400}>
-                {date}
-              </Text>
-              <Text fontType="B3" width={70} color={color.gray400}>
-                {time}
-              </Text>
-            </Column>
+            <Row gap={92}>
+              <Row justifyContent="center" alignItems="center">
+                <Text
+                  fontType="B3"
+                  width={70}
+                  color={color.gray400}
+                  textAlign="center"
+                >
+                  {status
+                    ? INQUIRY_STATUS_CATEGORY[status as InquiryStatusType]
+                    : undefined}
+                </Text>
+              </Row>
+              <Column alignItems="center">
+                <Text fontType="B3" width={80} color={color.gray400}>
+                  {date}
+                </Text>
+                <Text fontType="B3" width={70} color={color.gray400}>
+                  {time}
+                </Text>
+              </Column>
+            </Row>
           </Row>
         </TableItem>
       </StyledInquiryTableItem>

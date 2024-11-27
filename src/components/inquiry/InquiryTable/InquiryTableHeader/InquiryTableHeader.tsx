@@ -51,7 +51,7 @@ export default InquiryTableHeader;
 const StyledInquiryTableHeader = styled.div`
   ${flex({ alignItems: "center" })}
   background-color: ${color.gray100};
-  padding: 8px 112px 8px 40px;
+  padding:8px 40px;
   width: 100%;
   border-top: 1px solid ${color.adminGray400};
   border-bottom: 1px solid ${color.adminGray400};
