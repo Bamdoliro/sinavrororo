@@ -5,12 +5,14 @@ import styled from "styled-components";
 import { useState } from "react";
 import { New } from "@public/svgs";
 import { useInquiryListQuery } from "@/services/inquiry/queries";
+import { ROUTES } from "@/constants/common/constants";
+import { useRouter } from "next/navigation";
 
 const InquiryBox = () => {
+  const router = useRouter();
   const { data: InquiryList } = useInquiryListQuery();
 
   const InquiryCount = InquiryList?.length;
-
   const [isNewInquiry] = useState(InquiryCount);
 
   return (
@@ -30,6 +32,9 @@ const InquiryBox = () => {
         size="LARGE"
         styleType="TERTIARY"
         style={{ whiteSpace: "nowrap" }}
+        onClick={() => {
+          router.push(ROUTES.INQUIRY);
+        }}
       >
         문의 내역으로 이동
       </Button>

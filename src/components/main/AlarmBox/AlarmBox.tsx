@@ -1,9 +1,13 @@
+import { ROUTES } from "@/constants/common/constants";
 import { color } from "@/styles";
 import { Button, Column, Row, Text } from "@/ui/index";
 import { flex } from "@/utils";
+import { useRouter } from "next/navigation";
 import styled from "styled-components";
 
 const AlarmBox = () => {
+  const router = useRouter();
+
   return (
     <StyledApplicationBox>
       <Column gap={12}>
@@ -16,6 +20,9 @@ const AlarmBox = () => {
           size="LARGE"
           styleType="TERTIARY"
           style={{ whiteSpace: "nowrap" }}
+          onClick={() => {
+            router.push(ROUTES.ALARM);
+          }}
         >
           알림 설정으로 이동
         </Button>

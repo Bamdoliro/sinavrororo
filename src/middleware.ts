@@ -10,7 +10,7 @@ export const middleware = async (request: NextRequest) => {
     ?.split("=")[1];
 
   if (
-    url.startsWith("/main") ||
+    // url.startsWith("/main") ||
     url.startsWith("/alarm") ||
     url.startsWith("/faq") ||
     url.startsWith("/inquiry")
